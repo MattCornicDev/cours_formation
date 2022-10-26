@@ -7,7 +7,7 @@ export default class Navbar extends Component {
                 <nav className="navbar navbar-light bg-light">
                     <div className="container">
                         <a className="navbar-brand" href="#">
-                            <img src="mattCornicDev.svg" alt="logo matt cornic" width="150" height="140"/>
+                            <img src="Matt-Cornic-Dev.svg" alt="logo matt cornic" width="150" height="140"/>
                         </a>
                     </div>
                 </nav>
