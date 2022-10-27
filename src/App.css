@@ -1,3 +1,7 @@
+* {
+  background: #282c34;
+  color: antiquewhite;
+}
 .App {
   text-align: center;
 }
@@ -35,4 +39,47 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.card {
+  background: aliceblue;
+}
+
+.tilt {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.card img {
+  width: 64px;
+  transform: translateZ(70px);
+}
+
+.card-title {
+  transform: translateZ(50px);
+}
+
+.card-text {
+  transform: translateZ(50px);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+    background-color: #212121;
+   
+}
+
+pre {
+  background-color: #212121;
+  margin-right: 310px;
+  border-radius: 5px;
+}
+
+code kbd {
+  color:rgb(214, 223, 230);
+  background-color: #212121;
+}
+span{ 
+  color: aqua;
 }

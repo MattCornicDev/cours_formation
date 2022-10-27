@@ -169,6 +169,39 @@ export default class NodeCours extends Component {
 
                         Ensuite, on termine la réponse <code>end()</code> en envoyant le message de notre choix au navigateur. Ici, on n'envoie même pas de HTML, juste du texte brut.</p>
 
+                    <p>Le serveur est lancé et "écoute" sur le port 8080 avec l'instruction :</p>
+
+                    <pre>
+                        <code>
+                            <kbd>
+                                <span>listen</span>
+                                <span>(</span>
+                                <span>8080</span>
+                                <span>)</span>
+                                <span>;</span>
+                            </kbd>
+                        </code>
+                    </pre>
+                    <p>Attention certain port sont reservé car ils sont utilisé par le systeme comme le port 80</p>
+
+                    <h2>Lancer le server http</h2>
+                    <p>dans votre terminal lancer la commande suivante :</p>
+                    <pre>
+                        <code>
+                            <kbd>node server.js</kbd>
+                        </code>
+                    </pre>
+                    <p>Maintenant ouvrez votre navigateur et entrer dans la barre d'adresse l'adresse suivante http://localhost:8080</p>
+                    <img src="nav_nodeServer.png" alt="Affichage du navigateur" width="600px" />
+                    <p>Et <code><kbd>Ctrl + C</kbd></code> pour arrêter le server</p>
+
+                    <h3>La norme HTTP</h3>
+                    <p>Le serveur indiquer le type de données qu'il s'apprête à envoyer au client. Eh oui, un serveur peut renvoyer différents types de données :</p>
+
+                    <p> Du texte brut : text/plain, du HTML : text/html, du CSS : text/css, une image JPEG : image/jpeg, une vidéo MPEG4 : video/mp4, un fichier ZIP : application/zip etc.
+                    </p>
+                    
+
                     <h2>NPM et Yarn</h2>
                     <h2>Express JS</h2>
                 </div>

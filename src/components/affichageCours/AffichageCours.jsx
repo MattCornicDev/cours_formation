@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import Title from 'react-vanilla-tilt'
-import './affichageCours.css'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import './affichageCours.css';
+import Tilt from 'react-vanilla-tilt';
 
 
 
@@ -13,7 +13,7 @@ export default class AffichageCours extends Component {
                     <div className="row row-cols-1 row-cols-md-3 g-4">
                     <Link to="/gitCours" className="lien_page_git">
                         <div className="col">
-                        <Title options={{ scale: 2, max: 25 }}>
+                        <Tilt className="tilt">
                             <div className="card h-100">
                                 <img src="git.svg.png" className="card-img-top mt-2 mx-auto" alt="logo git" />
                                 <div className="card-body">
@@ -26,12 +26,12 @@ export default class AffichageCours extends Component {
                                 </div>
                                 
                             </div>
-                            </Title>
+                            </Tilt>
                         </div>
                         </Link>
                         <Link to="/nodeCours" className="lien_page_git" >
                         <div className="col">
-                        <Title options={{ scale: 2, max: 25 }}>
+                        <Tilt className="tilt">
                             <div className="card h-100">
                                 <img src="Node.js_logo.svg.png" className="card-img-top mt-2 mx-auto" alt="logo node JS" />
                                 <div className="card-body">
@@ -44,11 +44,11 @@ export default class AffichageCours extends Component {
                                 </div>
                                 
                             </div>
-                            </Title>
+                            </Tilt>
                         </div>
                         </Link>
                         <div className="col">
-                        <Title options={{ scale: 2, max: 25 }}>
+                        <Tilt className="tilt">
                             <div className="card h-100">
                                 <img src="html.svg.png" className="card-img-top mt-2 mx-auto" alt="logo html" />
                                 <div className="card-body">
@@ -59,10 +59,10 @@ export default class AffichageCours extends Component {
                                     <small className="text-muted">Mise à jour il y a 3 min</small>
                                 </div>
                             </div>
-                            </Title>
+                            </Tilt>
                         </div>
                         <div className="col">
-                        <Title options={{ scale: 2, max: 25 }}>
+                        <Tilt className="tilt">
                             <div className="card h-100">
                                 <img src="bootstrap_logo.svg.png" className="card-img-top mt-2 mx-auto" alt="logo bootstrap" />
                                 <div className="card-body">
@@ -73,7 +73,7 @@ export default class AffichageCours extends Component {
                                     <small className="text-muted">Last updated 3 mins ago</small>
                                 </div>
                             </div>
-                            </Title>
+                            </Tilt>
                         </div>
                     </div>
                 </div>

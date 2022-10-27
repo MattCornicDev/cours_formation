@@ -12,9 +12,7 @@ export default class Home extends Component {
                         <div className="col-6">
                             <Navbar />
                         </div>
-                        <div className="col-6">
-                            <h1>Cours succins de git et github</h1>
-                        </div>
+                        
                         <div>
                             <AffichageCours />
                         </div>

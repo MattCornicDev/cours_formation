@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import './navbar.css'
 
 export default class Navbar extends Component {
     render() {
@@ -6,9 +8,10 @@ export default class Navbar extends Component {
             <>
                 <nav className="navbar navbar-light bg-light">
                     <div className="container">
-                        <a className="navbar-brand" href="#">
+                        <Link to="/" className="navbar-brand">
                             <img src="Matt-Cornic-Dev.svg" alt="logo matt cornic" width="150" height="140"/>
-                        </a>
+                        </Link>
+                        <h1>COURS FORMATIONS DEVELOPPEUR D'APPLICATIONS</h1>
                     </div>
                 </nav>
             </>
