@@ -66,7 +66,7 @@
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-    background-color: #212121;
+   
    
 }
 
@@ -74,12 +74,26 @@ pre {
   background-color: #212121;
   margin-right: 310px;
   border-radius: 5px;
+  padding: 10px;
+
 }
 
 code kbd {
   color:rgb(214, 223, 230);
-  background-color: #212121;
+  background: #212121;
+ 
 }
 span{ 
-  color: aqua;
+  color: rgb(218, 234, 234);
+  background: #212121;
+}
+
+.img-navigateur{
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  border-radius: 5px;
+  display: block;
+  width: 50%;
+  margin: auto;
 }

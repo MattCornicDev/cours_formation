@@ -27,14 +27,14 @@ export default class NodeCours extends Component {
                     <pre>
                         <code>
                             <kbd>
-                                <span>var </span>
+                                <span>const </span>
                                 <span>http </span>
                                 <span>=</span>
                                 <span> require</span>
                                 <span>(</span>
                                 'http'
                                 <span>)</span>;<br />
-                                <span>var </span>
+                                <span>const </span>
                                 <span>server </span>
                                 <span>=</span>
                                 <span> http</span>
@@ -81,7 +81,7 @@ export default class NodeCours extends Component {
                     <pre>
                         <code>
                             <kbd>
-                                <span>var </span>
+                                <span>const </span>
                                 <span>http </span>
                                 <span>=</span>
                                 <span> require</span>
@@ -95,7 +95,7 @@ export default class NodeCours extends Component {
                     <pre>
                         <code>
                             <kbd>
-                                <span>var </span>
+                                <span>const </span>
                                 <span>server </span>
                                 <span>=</span>
                                 <span> http</span>
@@ -111,7 +111,7 @@ export default class NodeCours extends Component {
                     <pre>
                         <code>
                             <kbd>
-                                <span>var </span>
+                                <span>const </span>
                                 <span>server </span>
                                 <span>=</span>
                                 <span> http</span>
@@ -192,7 +192,7 @@ export default class NodeCours extends Component {
                         </code>
                     </pre>
                     <p>Maintenant ouvrez votre navigateur et entrer dans la barre d'adresse l'adresse suivante http://localhost:8080</p>
-                    <img src="nav_nodeServer.png" alt="Affichage du navigateur" width="600px" />
+                    <img src="nav_nodeServer.png" alt="Affichage du navigateur" width="600px" className='img-navigateur' />
                     <p>Et <code><kbd>Ctrl + C</kbd></code> pour arrêter le server</p>
 
                     <h3>La norme HTTP</h3>
@@ -200,7 +200,474 @@ export default class NodeCours extends Component {
 
                     <p> Du texte brut : text/plain, du HTML : text/html, du CSS : text/css, une image JPEG : image/jpeg, une vidéo MPEG4 : video/mp4, un fichier ZIP : application/zip etc.
                     </p>
-                    
+
+                    <p>Plus haut nous avion indiqué le code de réponse 200 qui signifie "OK, pas d'erreur". Rajoutons maintenant un paramètre qui indique le type MIME de la réponse pour HTML </p>
+                    <pre>
+                        <code>
+                            <kbd>
+                                <span>res</span>
+                                <span>.</span>
+                                <span>writeHead</span>
+                                <span>(</span>
+                                <span>200</span>
+                                <span>,</span>
+                                <span>{'{'}</span>
+                                <span>"Content-Type"</span>
+                                <span>:</span>
+                                <span>"text/html"</span>
+                                <span>{'}'}</span>
+                                <span>)</span>
+                                <span>;</span>
+                            </kbd>
+                        </code>
+                    </pre>
+
+                    <p>renvoyons du HTML dans la réponse.</p>
+
+                    <pre>
+                        <code>
+                            <span>res</span>
+                            <span>.</span>
+                            <span>end</span>
+                            <span>(</span>
+                            <span>'</span>
+                            <span>{'<p>'}</span>
+                            <span>Ici c'est paris en <strong>HTML</strong> !</span>
+                            <span>{'</p>'}</span>
+                            <span>'</span>
+                            <span>)</span>
+                            <span>;</span>
+                        </code>
+                    </pre>
+
+                    <pre>
+                        <code>
+                            <span>const </span>
+                            <span>http</span>
+                            <span> = </span>
+                            <span>require</span>
+                            <span>(</span>
+                            <span>'http'</span>
+                            <span>)</span>
+                            <span>;</span><br />
+                            <span>const </span>
+                            <span>server </span>
+                            <span>= </span>
+                            <span>http</span>
+                            <span>.</span>
+                            <span>createServer</span>
+                            <span>(</span>
+                            <span>function</span>
+                            <span>(</span>
+                            <span>req</span>
+                            <span>,</span>
+                            <span></span>
+                            <span>res</span>
+                            <span>)</span>
+                            <span>{'{'}</span><br />
+                            <span>res</span>
+                            <span>.</span>
+                            <span>writeHead</span>
+                            <span>(</span>
+                            <span>200</span>
+                            <span>,</span>
+                            <span>{'{'}</span>
+                            <span>"Content-Type": "text/html"</span>
+                            <span>{'}'}</span>
+                            <span>)</span>
+                            <span>;</span><br />
+                            <span>res</span>
+                            <span>.</span>
+                            <span>end</span>
+                            <span>(</span>
+                            <span>'{'<p>'}Ici c\'est {'<strong>'}HTML{'</strong>'} !{'</p>'}'</span>
+                            <span>)</span>
+                            <span>;</span>
+                            <span>{'}'}</span>
+                            <span>)</span>
+                            <span>;</span><br />
+                            <span>server</span>
+                            <span>.</span>
+                            <span>listen</span>
+                            <span>(</span>
+                            <span>8080</span>
+                            <span>)</span>
+                            <span>;</span>
+                        </code>
+                    </pre>
+                    <p>Lancer l'app avec <code>node server.js</code> et dans le navigateur http://localhost:8080</p>
+
+                    <p>Et le server vous retourne le page HTML et interprète le code</p>
+                    <img src="retour-server.png" alt="retourne la page html demandé" width="600px" className='img-navigateur' />
+
+                    <p>integrons maintenant plus de html</p>
+
+                    <pre>
+                        <code>
+                            <span>const </span>
+                            <span>http</span>
+                            <span> = </span>
+                            <span>require</span>
+                            <span>(</span>
+                            <span>'http'</span>
+                            <span>)</span>
+                            <span>;</span><br />
+                            <span>const </span>
+                            <span>server </span>
+                            <span>= </span>
+                            <span>http</span>
+                            <span>.</span>
+                            <span>createServer</span>
+                            <span>(</span>
+                            <span>function</span>
+                            <span>(</span>
+                            <span>req</span>
+                            <span>,</span>
+                            <span></span>
+                            <span>res</span>
+                            <span>)</span>
+                            <span>{'{'}</span><br />
+                            <span>res</span>
+                            <span>.</span>
+                            <span>writeHead</span>
+                            <span>(</span>
+                            <span>200</span>
+                            <span>,</span>
+                            <span>{'{'}</span>
+                            <span>"Content-Type": "text/html"</span>
+                            <span>{'}'}</span>
+                            <span>)</span>
+                            <span>;</span><br />
+                            <span>res</span>
+                            <span>.</span>
+                            <span>write</span>
+                            <span>(</span>
+                            <span>'{'<!DOCTYPE html>'}'+</span><br />
+                            <span>'   {'<html>'}'+</span><br />
+                            <span>'    {'<head>'}'+</span><br />
+                            <span>'     {'<meta charset="utf-8" />'}'+</span><br />
+                            <span>'     {'<title>Ma page Node.js !</title>'}'+</span><br />
+                            <span>'    {'</head>'}'+</span><br />
+                            <span>'     {'<body>'}'+</span><br />
+                            <span>'         {'<p>Voici un paragraphe <strong>HTML</strong> !</p>'}'+</span><br />
+                            <span>'      {'</body>'}'+</span><br />
+                            <span>'     {'</html>'}'</span><br />
+                            <span>)</span>
+                            <span>;</span><br />
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span>res</span>
+                            <span>.</span>
+                            <span>end</span>
+                            <span>(</span>
+                            <span>)</span>
+                            <span>;</span><br />
+                            <span>{'}'}</span>
+                            <span>)</span>
+                            <span>;</span><br />
+                            <span>server</span>
+                            <span>.</span>
+                            <span>listen</span>
+                            <span>(</span>
+                            <span>8080</span>
+                            <span>)</span>
+                            <span>;</span>
+                        </code>
+                    </pre>
+
+                    <p>Il faut reconnaitre que coder du html de cette façon est plus que laborieux par consequent nous allons utiliser un système de template. Jusqu'ici quelque soit la page demandé dans l'url vous obtiendrez toujours la même chose. localhost:8080/ ou localhost:8080/accueil nous obtenons la même chose.</p>
+
+                    <p>Voyons maintenant comment récupérer :
+
+                        Le nom de la page demandée (/accueil, /accueil.html, /page/autrepage...)
+                        Les paramètres qui circulent dans l'URL (ex : http://localhost:8080/contact?nom=dupont&prenom=robert).</p>
+
+                    <p>La page que le visiteur demande</p>
+                    <p>Pour cela node met a disposition un nouveau module nommée "url".</p>
+                    <p>Il faut donc l'inclure et la mettre dans une variable</p>
+
+                    <pre>
+                        <code>
+                            <kbd>
+                                <span>const </span>
+                                <span>url</span>
+                                <span> = </span>
+                                <span>require</span>
+                                <span>(</span>
+                                <span>'url'</span>
+                                <span>)</span>
+                                <span>;</span>
+                            </kbd>
+                        </code>
+                    </pre>
+
+                    <p>Ensuite, "parsez" la requête du visiteur pour obtenir le nom de la page demandée :</p>
+
+                    <pre>
+                        <code>
+                            <kbd>
+                                <span>url</span>
+                                <span>.</span>
+                                <span>parse</span>
+                                <span>(</span>
+                                <span>req</span>
+                                <span>.</span>
+                                <span>url</span>
+                                <span>)</span>
+                                <span>.</span>
+                                <span>pathname;</span>
+                            </kbd>
+                        </code>
+                    </pre>
+
+                    <p>le code complet</p>
+
+                    <pre>
+                        <code>
+                            <span>const </span>
+                            <span>http</span>
+                            <span> = </span>
+                            <span>require</span>
+                            <span>(</span>
+                            <span>'http'</span>
+                            <span>)</span>
+                            <span>;</span><br />
+
+                            <span>const </span>
+                            <span>url </span>
+                            <span> = </span>
+                            <span>require</span>
+                            <span>(</span>
+                            <span>'url'</span>
+                            <span>)</span>
+                            <span>;</span>
+                            <br /><br />
+
+                            <span>const </span>
+                            <span>server </span>
+                            <span>= </span>
+                            <span>http</span>
+                            <span>.</span>
+                            <span>createServer</span>
+                            <span>(</span>
+                            <span>function</span>
+                            <span>(</span>
+                            <span>req</span>
+                            <span>,</span>
+                            <span></span>
+                            <span>res</span>
+                            <span>)</span>
+                            <span>{'{'}</span><br />
+                            <span>const </span>
+                            <span>page </span>
+                            <span>= </span>
+                            <span>url</span>
+                            <span>.</span>
+                            <span>parse</span>
+                            <span>(</span>
+                            <span>req</span>
+                            <span>.</span>
+                            <span>url</span>
+                            <span>)</span>
+                            <span>.</span>
+                            <span>pathname</span>
+                            <span>;</span><br />
+                            <span>console</span>
+                            <span>.</span>
+                            <span>log</span>
+                            <span>(</span>
+                            <span>page</span>
+                            <span>)</span>
+                            <span>;</span><br />
+                            <span>res</span>
+                            <span>.</span>
+                            <span>writeHead</span>
+                            <span>(</span>
+                            <span>200</span>
+                            <span>,</span>
+                            <span>{'{'}</span>
+                            <span>"Content-Type": "text/plain"</span>
+                            <span>{'}'}</span>
+                            <span>)</span>
+                            <span>;</span><br />
+                            <span>res</span>
+                            <span>.</span>
+                            <span>write</span>
+                            <span>(</span>
+                            <span>'Salut à tous'</span>
+                            <span></span>
+                            <span>)</span>
+                            <span>;</span><br />
+                           
+                            <span>res</span>
+                            <span>.</span>
+                            <span>end</span>
+                            <span>(</span>
+                            <span>)</span>
+                            <span>;</span><br />
+                            <span>{'}'}</span>
+                            <span>)</span>
+                            <span>;</span><br />
+                            <span>server</span>
+                            <span>.</span>
+                            <span>listen</span>
+                            <span>(</span>
+                            <span>8080</span>
+                            <span>)</span>
+                            <span>;</span>
+                        </code>
+                    </pre>
+
+                    <p>Si vous executez la commande <code>node sever</code> et charger la page localhost:8080 vous aurez un '/' pour réponse et si vous ajouter des noms de page de votre imagination la console vous renverra le nom de la page en question. ex: localhost:8080/accueil la console vous renverra <code>/accueil</code> </p>
+
+                    <pre>
+                        <code>
+                            <span>const </span>
+                            <span>http</span>
+                            <span> = </span>
+                            <span>require</span>
+                            <span>(</span>
+                            <span>'http'</span>
+                            <span>)</span>
+                            <span>;</span><br />
+
+                            <span>const </span>
+                            <span>url </span>
+                            <span> = </span>
+                            <span>require</span>
+                            <span>(</span>
+                            <span>'url'</span>
+                            <span>)</span>
+                            <span>;</span>
+                            <br /><br />
+
+                            <span>const </span>
+                            <span>server </span>
+                            <span>= </span>
+                            <span>http</span>
+                            <span>.</span>
+                            <span>createServer</span>
+                            <span>(</span>
+                            <span>function</span>
+                            <span>(</span>
+                            <span>req</span>
+                            <span>,</span>
+                            <span></span>
+                            <span>res</span>
+                            <span>)</span>
+                            <span>{'{'}</span><br />
+                            <span>const </span>
+                            <span>page </span>
+                            <span>= </span>
+                            <span>url</span>
+                            <span>.</span>
+                            <span>parse</span>
+                            <span>(</span>
+                            <span>req</span>
+                            <span>.</span>
+                            <span>url</span>
+                            <span>)</span>
+                            <span>.</span>
+                            <span>pathname</span>
+                            <span>;</span><br />
+                            <span>console</span>
+                            <span>.</span>
+                            <span>log</span>
+                            <span>(</span>
+                            <span>page</span>
+                            <span>)</span>
+                            <span>;</span><br />
+                            <span>res</span>
+                            <span>.</span>
+                            <span>writeHead</span>
+                            <span>(</span>
+                            <span>200</span>
+                            <span>,</span>
+                            <span>{'{'}</span>
+                            <span>"Content-Type": "text/plain"</span>
+                            <span>{'}'}</span>
+                            <span>)</span>
+                            <span>;</span><br />
+
+                            <span>if</span>
+                            <span>(</span>
+                            <span>page </span>
+                            <span>== </span>
+                            <span>'/'</span>
+                            <span>) </span>
+                            <span>{'{'}</span><br />
+                            <span>res</span>
+                            <span>.</span>
+                            <span>write</span>
+                            <span>(</span>
+                            <span>'Ici c\'est page accueil'</span>
+                            <span>)</span>
+                            <span>;</span><br />
+                            <span>{'}'}</span><br />
+                            <span>else if </span>
+                            <span>(</span>
+                            <span>page </span>
+                            <span>== </span>
+                            <span>'/article'</span>
+                            <span>) </span>
+                            <span>{'{'} </span>
+                            <span>res</span>
+                            <span>.</span>
+                            <span>write</span>
+                            <span>(</span>
+                            <span>'Ici c\'est la page article'</span>
+                            <span>)</span>
+                            <span>;</span><br />
+                            <span>{'}'} </span><br />
+                            <span>else if</span>
+                            <span>(</span>
+                            <span>page </span>
+                            <span>== </span>
+                            <span>'/contact'</span>
+                            <span>) </span>
+                            <span>{'{'} </span><br />
+                            <span>res</span>
+                            <span>.</span>
+                            <span>write</span>
+                            <span>(</span>
+                            <span>'Ici c\'est la page contact'</span>
+                            <span>)</span>
+                            <span>;</span><br />
+                            <span>{'}'} </span><br />
+                            <span>else</span> 
+                            <span>{'{'} </span><br />
+                            <span>res</span>
+                            <span>.</span>
+                            <span>write</span>
+                            <span>(</span>
+                            <span>'page not found'</span>
+                            <span>)</span>
+                            <span>;</span><br />
+                            <span>{'}'} </span>
+
+                            <span>res</span>
+                            <span>.</span>
+                            <span>end</span>
+                            <span>(</span>
+                            <span>)</span>
+                            <span>;</span><br />
+                            <span>{'}'}</span>
+                            <span>)</span>
+                            <span>;</span><br />
+                            <span>server</span>
+                            <span>.</span>
+                            <span>listen</span>
+                            <span>(</span>
+                            <span>8080</span>
+                            <span>)</span>
+                            <span>;</span>
+                        </code>
+                    </pre>
+
 
                     <h2>NPM et Yarn</h2>
                     <h2>Express JS</h2>
