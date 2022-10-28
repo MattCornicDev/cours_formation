@@ -1,6 +1,7 @@
 * {
   background: #282c34;
   color: antiquewhite;
+  font-size: 20px;
 }
 .App {
   text-align: center;
@@ -66,26 +67,28 @@
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-   
-   
+    background-color: #212121;
+    
 }
 
 pre {
   background-color: #212121;
   margin-right: 310px;
   border-radius: 5px;
-  padding: 10px;
+  padding: 0.5rem;
+  margin: 1rem;
 
 }
 
 code kbd {
   color:rgb(214, 223, 230);
-  background: #212121;
+  
  
 }
 span{ 
   color: rgb(218, 234, 234);
   background: #212121;
+  font-size: 16px;
 }
 
 .img-navigateur{
@@ -96,4 +99,18 @@ span{
   display: block;
   width: 50%;
   margin: auto;
+}
+
+.varColor {
+  color: rgb(20, 12, 255);
+}
+
+h2 {
+  padding-left: 2rem;
+  color:rgb(245, 239, 231);
+}
+
+p {
+  text-align: justify;
+  padding: 1rem; 
 }

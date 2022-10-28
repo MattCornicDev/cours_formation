@@ -20,56 +20,56 @@ export default class NodeCours extends Component {
                     </div>
 
                     <h2>Installation de node JS</h2>
-                    <p>Tout d'abord il faut installer node JS si ce n'est pas déja fait. Pour vérifier si node est installer dans votre systeme lancer la commande suivant <code><kbd>node -v</kbd></code> s'il le terminal vous renvoie une version de node existante alors c'est ok sinon installer node via le lien suivant dans le site officiel <a href="https://nodejs.org/en/">cliquez ici</a></p>
+                    <p>Tout d'abord il faut installer node JS si ce n'est pas déja fait. Pour vérifier si node est installer dans votre systeme lancer la commande suivant <code>node -v</code> s'il le terminal vous renvoie une version de node existante alors c'est ok sinon installer node via le lien suivant dans le site officiel <a href="https://nodejs.org/en/">cliquez ici</a></p>
 
 
                     <h2>Créer un serveur http</h2>
                     <pre>
                         <code>
-                            <kbd>
-                                <span>const </span>
-                                <span>http </span>
-                                <span>=</span>
-                                <span> require</span>
-                                <span>(</span>
-                                'http'
-                                <span>)</span>;<br />
-                                <span>const </span>
-                                <span>server </span>
-                                <span>=</span>
-                                <span> http</span>
-                                <span>.</span>
-                                <span>createServer</span>
-                                <span>(</span>
-                                function
-                                <span>(</span>
-                                <span>req</span>
-                                <span>, </span>
-                                <span>res</span>
-                                <span>) </span>
-                                <span>{'{'}</span><br />
-                                <span> res.writeHead</span> <span>(</span>
-                                <span>200</span>
-                                <span>)</span>
-                                <span>;</span><br />
-                                <span> res</span>
-                                <span>.</span>
-                                <span>end</span>
-                                <span>(</span>
-                                <span>' Salut tout le monde ! '</span>
-                                <span>)</span>
-                                <span>;</span><br />
-                                <span>{'}'}</span>
-                                <span>)</span>
-                                <span>;</span><br />
-                                <span>server</span>
-                                <span>.</span>
-                                <span>listen</span>
-                                <span>(</span>
-                                <span>8080</span>
-                                <span>)</span>
-                                <span>;</span>
-                            </kbd>
+
+                            <span className='varColor'>const </span>
+                            <span>http </span>
+                            <span>=</span>
+                            <span> require</span>
+                            <span>(</span>
+                            'http'
+                            <span>)</span>;<br />
+                            <span className='varColor'>const </span>
+                            <span>server </span>
+                            <span>=</span>
+                            <span> http</span>
+                            <span>.</span>
+                            <span>createServer</span>
+                            <span>(</span>
+                            function
+                            <span>(</span>
+                            <span>req</span>
+                            <span>, </span>
+                            <span>res</span>
+                            <span>) </span>
+                            <span>{'{'}</span><br />
+                            <span> res.writeHead</span> <span>(</span>
+                            <span>200</span>
+                            <span>)</span>
+                            <span>;</span><br />
+                            <span> res</span>
+                            <span>.</span>
+                            <span>end</span>
+                            <span>(</span>
+                            <span>' Salut tout le monde ! '</span>
+                            <span>)</span>
+                            <span>;</span><br />
+                            <span>{'}'}</span>
+                            <span>)</span>
+                            <span>;</span><br />
+                            <span>server</span>
+                            <span>.</span>
+                            <span>listen</span>
+                            <span>(</span>
+                            <span>8080</span>
+                            <span>)</span>
+                            <span>;</span>
+
                         </code>
                     </pre>
                     <p>Ce code crée un petit server lancé sur le port 8080 et qui dit bonjour, ici quelque soit la page demandée</p>
@@ -77,69 +77,69 @@ export default class NodeCours extends Component {
 
                         La variable http représente un objet JavaScript qui va nous permettre de lancer un serveur web. C'est justement ce qu'on fait avec :</p>
 
-                    tout d'abord on importe http de la bibliothèque nodeJS cela nous permet de créer un server web
+                    <p>tout d'abord on importe http de la bibliothèque nodeJS cela nous permet de créer un server web</p>
                     <pre>
                         <code>
-                            <kbd>
-                                <span>const </span>
-                                <span>http </span>
-                                <span>=</span>
-                                <span> require</span>
-                                <span>(</span>
-                                'http'
-                                <span>)</span>;<br />
-                            </kbd>
+
+                            <span className='varColor'>const </span>
+                            <span>http </span>
+                            <span>=</span>
+                            <span> require</span>
+                            <span>(</span>
+                            'http'
+                            <span>)</span>;<br />
+
                         </code>
                     </pre>
                     <p>http est un objet js qui nous permettra de lancer un server web</p>
                     <pre>
                         <code>
-                            <kbd>
-                                <span>const </span>
-                                <span>server </span>
-                                <span>=</span>
-                                <span> http</span>
-                                <span>.</span>
-                                <span>createServer</span>
-                                <span>(</span>
-                                <span>)</span>
-                            </kbd>
+
+                            <span className='varColor'>const </span>
+                            <span>server </span>
+                            <span>=</span>
+                            <span> http</span>
+                            <span>.</span>
+                            <span>createServer</span>
+                            <span>(</span>
+                            <span>)</span>
+
                         </code>
                     </pre>
                     <p>On appelle la fonction <code>createServer()</code> contenue dans l'objet http et on enregistre ce serveur dans la variable server. La fonction createServer prendra un paramètre ce paramètre est une fonction c'est ce qu'on appelle une fonction callback !</p>
 
                     <pre>
                         <code>
-                            <kbd>
-                                <span>const </span>
-                                <span>server </span>
-                                <span>=</span>
-                                <span> http</span>
-                                <span>.</span>
-                                <span>createServer</span>
-                                <span>(</span>
-                                function
-                                <span>(</span>
-                                <span>req</span>
-                                <span>, </span>
-                                <span>res</span>
-                                <span>) </span>
-                                <span>{'{'}</span><br />
-                                <span> res.writeHead</span> <span>(</span>
-                                <span>200</span>
-                                <span>)</span>
-                                <span>;</span><br />
-                                <span> res</span>
-                                <span>.</span>
-                                <span>end</span>
-                                <span>(</span>
-                                <span>' Salut tout le monde ! '</span>
-                                <span>)</span>
-                                <span>;</span><br />
-                                <span>{'}'}</span>
-                                <span>)</span>
-                                <span>;</span>
-                            </kbd>
+
+                            <span className='varColor'>const </span>
+                            <span>server </span>
+                            <span>=</span>
+                            <span> http</span>
+                            <span>.</span>
+                            <span>createServer</span>
+                            <span>(</span>
+                            function
+                            <span>(</span>
+                            <span>req</span>
+                            <span>, </span>
+                            <span>res</span>
+                            <span>) </span>
+                            <span>{'{'}</span><br />
+                            <span> res.writeHead</span> <span>(</span>
+                            <span>200</span>
+                            <span>)</span>
+                            <span>;</span><br />
+                            <span> res</span>
+                            <span>.</span>
+                            <span>end</span>
+                            <span>(</span>
+                            <span>' Salut tout le monde ! '</span>
+                            <span>)</span>
+                            <span>;</span><br />
+                            <span>{'}'}</span>
+                            <span>)</span>
+                            <span>;</span>
+
                         </code>
                     </pre>
                     <p>À l'appel de createServer(). La fonction en paramètre s'exécute dès qu'un visiteur se connecte à notre site.</p>
@@ -149,20 +149,20 @@ export default class NodeCours extends Component {
 
                     <pre>
                         <code>
-                            <kbd>
-                                <span>res.writeHead</span>
-                                <span>(</span>
-                                <span>200</span>
-                                <span>)</span>
-                                <span>;</span><br />
-                                <span> res</span>
-                                <span>.</span>
-                                <span>end</span>
-                                <span>(</span>
-                                <span>' Salut tout le monde ! '</span>
-                                <span>)</span>
-                                <span>;</span><br />
-                            </kbd>
+
+                            <span>res.writeHead</span>
+                            <span>(</span>
+                            <span>200</span>
+                            <span>)</span>
+                            <span>;</span><br />
+                            <span> res</span>
+                            <span>.</span>
+                            <span>end</span>
+                            <span>(</span>
+                            <span>' Salut tout le monde ! '</span>
+                            <span>)</span>
+                            <span>;</span><br />
+
                         </code>
                     </pre>
                     <p>On renvoie le code 200 dans l'en-tête de la réponse, qui signifie au navigateur "tout va bien" (on aurait par exemple répondu 404 si la page demandée n'existait pas). Il faut savoir qu'en plus du code HTML, le serveur renvoie en général tout un tas de paramètres en en-tête. Il faut connaître la norme HTTP qui indique comment clients et serveurs doivent communiquer pour bien l'utiliser. Voilà encore un exemple de la complexité dûe au fait que Node.js est bas niveau... Mais en même temps ça nous fait comprendre tout un tas de choses.
@@ -173,13 +173,13 @@ export default class NodeCours extends Component {
 
                     <pre>
                         <code>
-                            <kbd>
-                                <span>listen</span>
-                                <span>(</span>
-                                <span>8080</span>
-                                <span>)</span>
-                                <span>;</span>
-                            </kbd>
+
+                            <span>listen</span>
+                            <span>(</span>
+                            <span>8080</span>
+                            <span>)</span>
+                            <span>;</span>
+
                         </code>
                     </pre>
                     <p>Attention certain port sont reservé car ils sont utilisé par le systeme comme le port 80</p>
@@ -188,7 +188,7 @@ export default class NodeCours extends Component {
                     <p>dans votre terminal lancer la commande suivante :</p>
                     <pre>
                         <code>
-                            <kbd>node server.js</kbd>
+                            node server.js
                         </code>
                     </pre>
                     <p>Maintenant ouvrez votre navigateur et entrer dans la barre d'adresse l'adresse suivante http://localhost:8080</p>
@@ -204,21 +204,21 @@ export default class NodeCours extends Component {
                     <p>Plus haut nous avion indiqué le code de réponse 200 qui signifie "OK, pas d'erreur". Rajoutons maintenant un paramètre qui indique le type MIME de la réponse pour HTML </p>
                     <pre>
                         <code>
-                            <kbd>
-                                <span>res</span>
-                                <span>.</span>
-                                <span>writeHead</span>
-                                <span>(</span>
-                                <span>200</span>
-                                <span>,</span>
-                                <span>{'{'}</span>
-                                <span>"Content-Type"</span>
-                                <span>:</span>
-                                <span>"text/html"</span>
-                                <span>{'}'}</span>
-                                <span>)</span>
-                                <span>;</span>
-                            </kbd>
+
+                            <span>res</span>
+                            <span>.</span>
+                            <span>writeHead</span>
+                            <span>(</span>
+                            <span>200</span>
+                            <span>,</span>
+                            <span>{'{'}</span>
+                            <span>"Content-Type"</span>
+                            <span>:</span>
+                            <span>"text/html"</span>
+                            <span>{'}'}</span>
+                            <span>)</span>
+                            <span>;</span>
+
                         </code>
                     </pre>
 
@@ -242,7 +242,7 @@ export default class NodeCours extends Component {
 
                     <pre>
                         <code>
-                            <span>const </span>
+                            <span className='varColor'>const </span>
                             <span>http</span>
                             <span> = </span>
                             <span>require</span>
@@ -250,7 +250,7 @@ export default class NodeCours extends Component {
                             <span>'http'</span>
                             <span>)</span>
                             <span>;</span><br />
-                            <span>const </span>
+                            <span className='varColor'>const </span>
                             <span>server </span>
                             <span>= </span>
                             <span>http</span>
@@ -304,7 +304,7 @@ export default class NodeCours extends Component {
 
                     <pre>
                         <code>
-                            <span>const </span>
+                            <span className='varColor'>const </span>
                             <span>http</span>
                             <span> = </span>
                             <span>require</span>
@@ -392,16 +392,16 @@ export default class NodeCours extends Component {
 
                     <pre>
                         <code>
-                            <kbd>
-                                <span>const </span>
-                                <span>url</span>
-                                <span> = </span>
-                                <span>require</span>
-                                <span>(</span>
-                                <span>'url'</span>
-                                <span>)</span>
-                                <span>;</span>
-                            </kbd>
+
+                            <span className='varColor'>const </span>
+                            <span>url</span>
+                            <span> = </span>
+                            <span>require</span>
+                            <span>(</span>
+                            <span>'url'</span>
+                            <span>)</span>
+                            <span>;</span>
+
                         </code>
                     </pre>
 
@@ -409,18 +409,18 @@ export default class NodeCours extends Component {
 
                     <pre>
                         <code>
-                            <kbd>
-                                <span>url</span>
-                                <span>.</span>
-                                <span>parse</span>
-                                <span>(</span>
-                                <span>req</span>
-                                <span>.</span>
-                                <span>url</span>
-                                <span>)</span>
-                                <span>.</span>
-                                <span>pathname;</span>
-                            </kbd>
+
+                            <span>url</span>
+                            <span>.</span>
+                            <span>parse</span>
+                            <span>(</span>
+                            <span>req</span>
+                            <span>.</span>
+                            <span>url</span>
+                            <span>)</span>
+                            <span>.</span>
+                            <span>pathname;</span>
+
                         </code>
                     </pre>
 
@@ -428,7 +428,7 @@ export default class NodeCours extends Component {
 
                     <pre>
                         <code>
-                            <span>const </span>
+                            <span className='varColor'>const </span>
                             <span>http</span>
                             <span> = </span>
                             <span>require</span>
@@ -437,7 +437,7 @@ export default class NodeCours extends Component {
                             <span>)</span>
                             <span>;</span><br />
 
-                            <span>const </span>
+                            <span className='varColor'>const </span>
                             <span>url </span>
                             <span> = </span>
                             <span>require</span>
@@ -447,7 +447,7 @@ export default class NodeCours extends Component {
                             <span>;</span>
                             <br /><br />
 
-                            <span>const </span>
+                            <span className='varColor'>const </span>
                             <span>server </span>
                             <span>= </span>
                             <span>http</span>
@@ -462,7 +462,7 @@ export default class NodeCours extends Component {
                             <span>res</span>
                             <span>)</span>
                             <span>{'{'}</span><br />
-                            <span>const </span>
+                            <span className='varColor'>const </span>
                             <span>page </span>
                             <span>= </span>
                             <span>url</span>
@@ -502,7 +502,7 @@ export default class NodeCours extends Component {
                             <span></span>
                             <span>)</span>
                             <span>;</span><br />
-                           
+
                             <span>res</span>
                             <span>.</span>
                             <span>end</span>
@@ -526,7 +526,7 @@ export default class NodeCours extends Component {
 
                     <pre>
                         <code>
-                            <span>const </span>
+                            <span className='varColor'>const </span>
                             <span>http</span>
                             <span> = </span>
                             <span>require</span>
@@ -535,7 +535,7 @@ export default class NodeCours extends Component {
                             <span>)</span>
                             <span>;</span><br />
 
-                            <span>const </span>
+                            <span className='varColor'>const </span>
                             <span>url </span>
                             <span> = </span>
                             <span>require</span>
@@ -545,7 +545,7 @@ export default class NodeCours extends Component {
                             <span>;</span>
                             <br /><br />
 
-                            <span>const </span>
+                            <span className='varColor'>const </span>
                             <span>server </span>
                             <span>= </span>
                             <span>http</span>
@@ -560,7 +560,7 @@ export default class NodeCours extends Component {
                             <span>res</span>
                             <span>)</span>
                             <span>{'{'}</span><br />
-                            <span>const </span>
+                            <span className='varColor'>const </span>
                             <span>page </span>
                             <span>= </span>
                             <span>url</span>
@@ -638,7 +638,7 @@ export default class NodeCours extends Component {
                             <span>)</span>
                             <span>;</span><br />
                             <span>{'}'} </span><br />
-                            <span>else</span> 
+                            <span>else</span>
                             <span>{'{'} </span><br />
                             <span>res</span>
                             <span>.</span>
