@@ -35,8 +35,8 @@ export default class AffichageCours extends Component {
                             <div className="card h-100">
                                 <img src="Node.js_logo.svg.png" className="card-img-top mt-2 mx-auto" alt="logo node JS" />
                                 <div className="card-body">
-                                    <h5 className="card-title">GIT</h5>
-                                    <p className="card-text">Aide mémoire des commandes git les plus utilisés ou les plus intéressantes.</p>
+                                    <h5 className="card-title">NODE JS</h5>
+                                    <p className="card-text">Environnement d'exécution nodeJS permet le developpement d'application javascript coté server.</p>
                                 </div>
                                 
                                 <div className="card-footer">
@@ -52,7 +52,7 @@ export default class AffichageCours extends Component {
                             <div className="card h-100">
                                 <img src="html.svg.png" className="card-img-top mt-2 mx-auto" alt="logo html" />
                                 <div className="card-body">
-                                    <h5 className="card-title">Card title</h5>
+                                    <h5 className="card-title">HTML</h5>
                                     <p className="card-text">cours HTML.</p>
                                 </div>
                                 <div className="card-footer">
@@ -64,9 +64,9 @@ export default class AffichageCours extends Component {
                         <div className="col">
                         <Tilt className="tilt">
                             <div className="card h-100">
-                                <img src="bootstrap_logo.svg.png" className="card-img-top mt-2 mx-auto" alt="logo bootstrap" />
+                                <img src="bootstrap_logo.svg.png" className="card-img-top mt-3 mx-auto" alt="logo bootstrap" />
                                 <div className="card-body">
-                                    <h5 className="card-title">Card title</h5>
+                                    <h5 className="card-title">BOOTSTRAP</h5>
                                     <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
                                 </div>
                                 <div className="card-footer">

@@ -3,6 +3,7 @@
   color: antiquewhite;
   font-size: 20px;
 }
+
 .App {
   text-align: center;
 }
@@ -42,28 +43,6 @@
   }
 }
 
-.card {
-  background: aliceblue;
-}
-
-.tilt {
-  transform-style: preserve-3d;
-  perspective: 1000px;
-}
-
-.card img {
-  width: 64px;
-  transform: translateZ(70px);
-}
-
-.card-title {
-  transform: translateZ(50px);
-}
-
-.card-text {
-  transform: translateZ(50px);
-}
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -101,16 +80,52 @@ span{
   margin: auto;
 }
 
-.varColor {
-  color: rgb(20, 12, 255);
+.container h1 {
+  font-size: 100px;
+  text-align: center;
+  padding: 3rem;
 }
 
-h2 {
-  padding-left: 2rem;
+.container h2 {
+  padding: 0rem;
+  margin: 0 0 3rem 3rem;
   color:rgb(245, 239, 231);
 }
 
 p {
   text-align: justify;
   padding: 1rem; 
+}
+
+
+.varColor {
+  color: rgb(20, 12, 255);
+}
+.nomVar {
+  color: #61dafb;
+}
+.nomFonct {
+  color: crimson;
+}
+.ifColor {
+  color:coral;
+}
+
+.img-thumbnail {
+  padding-bottom: 2rem;
+  width: 400px;
+  margin-bottom: 2rem;
+}
+
+.image-code {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  display: block;
+  margin: auto;
+  width: 500px;
+  text-align: center;
+}
+
+.titre h1 {
+  display: inline;
 }

@@ -1,8 +1,48 @@
 .card-img-top {
     width: 110px;
-    
+    display: flex;
+    justify-content: center;
 }
 a {
     text-decoration: none;
     color: black;
 }
+  
+  .tilt {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+  
+  .card img {
+    width: 64px;
+    transform: translateZ(100px);
+    background: #fff;
+  }
+  
+  .card-body {
+    background-color: #fff;
+  }
+  
+  .card-title {
+    text-align: center;
+    
+    transform: translateZ(100px);
+    background-color: #fff;
+    color: #212121;
+    
+  }
+  
+  .card-text {
+    transform: translateZ(100px);
+    background: #fff;
+    color: #212121;
+  }
+  .card-footer {
+    background: #fff;
+  }
+  .text-muted {
+    background: #fff;
+  }
