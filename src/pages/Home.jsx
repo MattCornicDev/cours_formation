@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import 'bootstrap/dist/css/bootstrap.css';
 import AffichageCours from '../components/affichageCours/AffichageCours';
 import Navbar from '../components/navigation/Navbar';
 import Footer from '../components/footer/Footer';
+import { Container, Row, Col } from 'react-bootstrap';
+
 
 export default class Home extends Component {
     render() {
@@ -11,13 +12,13 @@ export default class Home extends Component {
                 <div>
                     <Navbar />
                 </div>
-                <div className='container'>
-                    <div className="row">
-                        <div>
+                <Container>
+                    <Row>
+                        <Col>
                             <AffichageCours />
-                        </div>
-                    </div>
-                </div>
+                        </Col>
+                    </Row>
+                </Container>
                 <div>
                     <Footer />
                 </div>

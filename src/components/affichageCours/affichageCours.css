@@ -11,13 +11,11 @@ a {
   .tilt {
     transform-style: preserve-3d;
     perspective: 1000px;
-    padding: 0;
-    margin: 0;
     text-align: center;
   }
   
-  .card img {
-    width: 64px;
+ Card.Img {
+    width: auto;
     transform: translateZ(100px);
     background: #fff;
   }
@@ -28,11 +26,9 @@ a {
   
   .card-title {
     text-align: center;
-    
     transform: translateZ(100px);
     background-color: #fff;
     color: #212121;
-    
   }
   
   .card-text {
@@ -40,9 +36,7 @@ a {
     background: #fff;
     color: #212121;
   }
-  .card-footer {
-    background: #fff;
-  }
+  
   .text-muted {
     background: #fff;
   }

@@ -2,81 +2,67 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './affichageCours.css';
 import Tilt from 'react-vanilla-tilt';
-
+import Card from 'react-bootstrap/Card';
+import { Container, Col, Row} from 'react-bootstrap';
 
 
 export default class AffichageCours extends Component {
     render() {
         return (
             <>
-                <div className='container' >
-                    <div className="row row-cols-1 row-cols-md-3 g-4">
-                    <Link to="/gitCours" className="lien_page_git">
-                        <div className="col">
-                        <Tilt className="tilt">
-                            <div className="card h-100">
-                                <img src="git.svg.png" className="card-img-top mt-2 mx-auto" alt="logo git" />
-                                <div className="card-body">
-                                    <h5 className="card-title">GIT</h5>
-                                    <p className="card-text">Aide mémoire des commandes git les plus utilisés ou les plus intéressantes.</p>
-                                </div>
-                                
-                                <div className="card-footer">
-                                    <small className="text-muted">Mise à jour il y a 3 min</small>
-                                </div>
-                                
-                            </div>
-                            </Tilt>
-                        </div>
+                <Container>
+                    <Row xs={1} md={4} className="g-4">
+                        <Link to="/gitCours">
+                            <Col>
+                                <Tilt>
+                                    <Card>
+                                        <Card.Img variant="top" src="git.svg.png" alt="logo git" />
+                                        <Card.Body>
+                                            <Card.Title>GIT</Card.Title>
+                                            <Card.Text>Aide mémoire des commandes git les plus utilisés ou les plus intéressantes.</Card.Text>
+                                        </Card.Body>
+                                    </Card>
+                                </Tilt>
+                            </Col>
                         </Link>
-                        <Link to="/nodeCours" className="lien_page_git" >
-                        <div className="col">
-                        <Tilt className="tilt">
-                            <div className="card h-100">
-                                <img src="Node.js_logo.svg.png" className="card-img-top mt-2 mx-auto" alt="logo node JS" />
-                                <div className="card-body">
-                                    <h5 className="card-title">NODE JS</h5>
-                                    <p className="card-text">Environnement d'exécution nodeJS permet le developpement d'application javascript coté server.</p>
-                                </div>
-                                
-                                <div className="card-footer">
-                                    <small className="text-muted">Mise à jour il y a 3 min</small>
-                                </div>
-                                
-                            </div>
-                            </Tilt>
-                        </div>
+
+                        <Link to="/nodeCours">
+                            <Col>
+                                <Tilt>
+                                    <Card>
+                                        <Card.Img src="Node.js_logo.svg.png" alt="logo node JS" />
+                                        <Card.Body>
+                                            <Card.Title>NODE JS</Card.Title>
+                                            <Card.Text>Environnement d'exécution nodeJS.</Card.Text>
+                                        </Card.Body>
+                                    </Card>
+                                </Tilt>
+                            </Col>
                         </Link>
-                        <div className="col">
-                        <Tilt className="tilt">
-                            <div className="card h-100">
-                                <img src="html.svg.png" className="card-img-top mt-2 mx-auto" alt="logo html" />
-                                <div className="card-body">
-                                    <h5 className="card-title">HTML</h5>
-                                    <p className="card-text">cours HTML.</p>
-                                </div>
-                                <div className="card-footer">
-                                    <small className="text-muted">Mise à jour il y a 3 min</small>
-                                </div>
-                            </div>
+                        <Col>
+                            <Tilt>
+                                <Card>
+                                    <Card.Img src="html.svg.png" alt="logo html" />
+                                    <Card.Body>
+                                        <h5 className="card-title">HTML</h5>
+                                        <p className="card-text">cours HTML.</p>
+                                    </Card.Body>
+                                </Card>
                             </Tilt>
-                        </div>
-                        <div className="col">
-                        <Tilt className="tilt">
-                            <div className="card h-100">
-                                <img src="bootstrap_logo.svg.png" className="card-img-top mt-3 mx-auto" alt="logo bootstrap" />
-                                <div className="card-body">
-                                    <h5 className="card-title">BOOTSTRAP</h5>
-                                    <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                                </div>
-                                <div className="card-footer">
-                                    <small className="text-muted">Last updated 3 mins ago</small>
-                                </div>
-                            </div>
+                        </Col>
+                        <Col>
+                            <Tilt>
+                                <Card>
+                                    <Card.Img src="bootstrap_logo.svg.png" alt="logo bootstrap" />
+                                    <Card.Body>
+                                        <h5 className="card-title">BOOTSTRAP</h5>
+                                        <p className="card-text">Cours bootstrap bientôt.</p>
+                                    </Card.Body>
+                                </Card>
                             </Tilt>
-                        </div>
-                    </div>
-                </div>
+                        </Col>
+                    </Row>
+                </Container>
             </>
         )
     }

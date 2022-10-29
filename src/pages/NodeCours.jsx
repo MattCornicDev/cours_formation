@@ -3,6 +3,7 @@ import Navbar from '../components/navigation/Navbar'
 import Footer from '../components/footer/Footer'
 import Iframe from 'react-iframe'
 
+
 export default class NodeCours extends Component {
     render() {
         return (
@@ -779,11 +780,7 @@ export default class NodeCours extends Component {
 
                     <img src="/connexion_socket_io.png" alt="Code pour la connexion entre l'ordinateur et socket.io" className='image-code' />
 
-                    <p>Aller à l'adresse http://localhost:8080 le server vous renvoie "Communication établie avec socket.io" et la console vous informe que "Un client est connecté". Ceci indique tout à fonctionné</p>
-
-
-
-
+                    <p>Aller à l'adresse <a href="http://localhost:8080">http://localhost:8080</a> le server vous renvoie "Communication établie avec socket.io" et la console vous informe que "Un client est connecté". Ceci indique tout à fonctionné</p>
 
 
 

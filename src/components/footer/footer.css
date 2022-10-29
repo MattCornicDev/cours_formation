@@ -1,7 +1,12 @@
-.footer{
-    background-color: black;
-    padding: 1rem;
-    margin-top: 2rem;
-    font-size: 16px;
+footer {
+    font-size: 20px;
+}
+footer p{
     text-align: center;
+    text-align: center;
+    color:antiquewhite;
+    font-size: 0.5rem;
+    padding-top: 2rem;
+    padding-bottom: 0.2rem;
+    margin: 0.2rem;
 }
