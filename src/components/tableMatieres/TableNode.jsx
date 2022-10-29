@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './tableNode.css'
 import 'bootstrap/dist/css/bootstrap.css';
 
-export default class tableNode extends Component {
+export default class TableNode extends Component {
     render() {
         return (
             <>

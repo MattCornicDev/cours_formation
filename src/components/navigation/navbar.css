@@ -5,5 +5,35 @@ h1 {
   border-radius: 100px;
   background: rgb(248, 150, 2);
 }
+.card {
+  background: aliceblue;
+}
 
+.tilt {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.card img {
+  width: 64px;
+  transform: translateZ(100px);
+  background: #fff;
+}
+
+.card-body {
+  background-color: #fff;
+}
+
+.card-title {
+  transform: translateZ(100px);
+  background: #fff;
+  color: #212121;
+  
+}
+
+.card-text {
+  transform: translateZ(100px);
+  background: #fff;
+  color: #212121;
+}
 
