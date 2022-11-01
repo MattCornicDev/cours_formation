@@ -9,11 +9,6 @@ export default class gitCours extends Component {
                 <div>
                     <Navbar />
                 </div>
-                <div>
-                    <TableNode />
-                </div>
-
-
                 <div className='container'>
 
                     <h1>GIT</h1>

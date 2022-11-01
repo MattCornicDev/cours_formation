@@ -6,9 +6,9 @@ export default class Footer extends Component {
   render() {
 
     return (
-      <footer >
+      <footer>
         <div>
-          <p> © 2020 Copyright | Matt Cornic Dev</p>
+          <p className='footer'> © 2020 Copyright | Matt Cornic Dev</p>
         </div>
       </footer>
     );

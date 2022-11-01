@@ -14,17 +14,17 @@ a {
     text-align: center;
   }
   
- Card.Img {
+ .Card.Img {
     width: auto;
     transform: translateZ(100px);
     background: #fff;
   }
   
-  .card-body {
+  .Card.Body {
     background-color: #fff;
   }
   
-  .card-title {
+  Card.Title {
     text-align: center;
     transform: translateZ(100px);
     background-color: #fff;

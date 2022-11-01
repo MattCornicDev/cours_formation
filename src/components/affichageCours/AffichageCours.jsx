@@ -11,7 +11,7 @@ export default class AffichageCours extends Component {
         return (
             <>
                 <Container>
-                    <Row xs={1} md={4} className="g-4">
+                    <Row xs={1} md={2} sm={1} lg={4} >
                         <Link to="/gitCours">
                             <Col>
                                 <Tilt>
@@ -61,6 +61,19 @@ export default class AffichageCours extends Component {
                                 </Card>
                             </Tilt>
                         </Col>
+                        <Link to="/react_cours">
+                        <Col>
+                            <Tilt>
+                                <Card>
+                                    <Card.Img src="logo192.png" alt="logo bootstrap" />
+                                    <Card.Body>
+                                        <h5 className="card-title">ReactJS</h5>
+                                        <p className="card-text">Cours React.</p>
+                                    </Card.Body>
+                                </Card>
+                            </Tilt>
+                        </Col>
+                        </Link>
                     </Row>
                 </Container>
             </>

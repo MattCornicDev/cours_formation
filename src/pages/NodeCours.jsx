@@ -708,7 +708,7 @@ export default class NodeCours extends Component {
 
                     <img src="code_avec_express_page_introuvable.png" alt="code express page introuvable" className='image-code' />
 
-                    <h3>Routes dynamique</h3>
+                    <h3>Routes dynamiques</h3>
 
                     <p>Les routes dynamiques permettent d'ajouter des paramètres à notre URL</p>
                     <img src="code_avec_express_page_avec_parametre.png" alt="code avec express page avec parametre" className='image-code' />
@@ -733,11 +733,11 @@ export default class NodeCours extends Component {
 
                     <img src="route_page_ejs.png" alt="Route de la page avec EJS" className='image-code' />
 
-                    <p>Et du coté html créer une page page-article.ejs</p>
+                    <p>Et du coté html créer une page page-article.ejs dans un dossier views et lancer l'appli à l'adresse localhost:8080 /</p>
 
                     <img src="exemple_ejs.png" alt="EJS coté html" className='image-code' />
 
-                    <h2>Les middlewares<a href="https://expressjs.com/en/guide/using-middleware.html">(Cliquez ici pour lire la doc)</a></h2>
+                    <h2>Les middlewares <a href="https://expressjs.com/en/guide/using-middleware.html">(Cliquez ici pour lire la doc)</a></h2>
 
                     <p>La base d'express sont les middleweares. il s'agit de morceaux d'application qui proposent des micro fonctionnalité. Il est possible de ne charge uniquement les middleweares dont on a besoin. Pour les utiliser il suffit d'appeler la méthode app.use() après l'installation du middleware dont on a besoin via NPM. L'ordre d'appel des middlewares est très important.</p>
 
