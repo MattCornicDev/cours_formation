@@ -882,9 +882,9 @@ function NodeCours({ copyText }) {
                 <p>Pour insérer de nouvelle collection <code>db.legumes.insertOne()</code></p>
                 <p>Pour rechercher un objet en particulier via leur critère <code>db.legumes.findOne({'{'}name: "carotte"{'}'})</code></p>
 
-                <p>Requete pour selectionner un objet dont la valeur est superieur à... avec <code>gt</code> ""gt" comme "great than" <code>db.legumes.find({'{'}price : {'{'}$gt : 20 {'}'})</code></p>
+                <p>Requete pour selectionner un objet dont la valeur est superieur à... avec <code>gt</code> ""gt" comme "great than" <code>db.legumes.find({'{'}price : {'{'}$gt : 20 {'}}'})</code></p>
 
-                <p>Requete pour selectionner un objet dont la valeur est inferieur à... avec <code>lt</code> ""lt" comme ""less than" <code>db.legumes.find({'{'}price : {'{'}$lt : 20 {'}'})</code> on peut ajouter un deuxieme parametre qu'on appelera la projection <code>db.legumes.find({'{'}price : {'{'}$lt : 20 {'}'}{'}'}, {'{'}name: 1{'}'})</code> ainsi on nous renvoie uniquement la name. Je peux ajouter de ne pas afficher l'id, (dans mongoDB l'id commence par un underscore _id) <code>db.legumes.find({'{'}price : {'{'}$lt : 20 {'}'}{'}'}, {'{'}name: 1, _id: 0{'}'})</code></p>
+                <p>Requete pour selectionner un objet dont la valeur est inferieur à... avec <code>lt</code> ""lt" comme ""less than" <code>db.legumes.find({'{'}price : {'{'}$lt : 20 {'}}'})</code> on peut ajouter un deuxieme parametre qu'on appelera la projection <code>db.legumes.find({'{'}price : {'{'}$lt : 20 {'}'}{'}'}, {'{'}name: 1{'}'})</code> ainsi on nous renvoie uniquement la name. Je peux ajouter de ne pas afficher l'id, (dans mongoDB l'id commence par un underscore _id) <code>db.legumes.find({'{'}price : {'{'}$lt : 20 {'}'}{'}'}, {'{'}name: 1, _id: 0{'}'})</code></p>
 
 
 
@@ -907,26 +907,26 @@ function NodeCours({ copyText }) {
                         db.legumes.insertOne(
                         {'{'}
                         _id: 1,
-                        name: "dates",
+                        name: "dattes",
                         price: 15,
                         origine: [
-                        {'{'}
+                        {'{'} <br />
                         pays: "Espagne",
                         region: "Andalousie",
                         temps: 35
-                        {'}'},
+                        {'}'},<br />
                         {'{'}
                         pays: "Maroc",
                         region: "Casablanca",
                         temps: 40
-                        {'{'},
+                        {'}'},<br />
                         {'{'}
                         pays: "Portugal",
                         region: "Porto",
                         temp: 30
                         {'}'}
 
-                        ]
+                        ] <br />
                         {'}'})
                     </code>
                 </pre>
@@ -1034,7 +1034,7 @@ function NodeCours({ copyText }) {
 
                         const PulpFiction = new Movies({'{'} <br />
                         name: "Pulp Fiction",<br />
-                        year: "1997",<br />
+                        year: 1997,<br />
                         actors: "Samuel Lee Jackson" <br />
                         {'}'}) <br />
                         PulpFiction.save() <br /><br />
@@ -1053,7 +1053,7 @@ function NodeCours({ copyText }) {
 
                 <pre>
                     <code>
-                        const Interstellar = new Movies ({'{'}
+                        const Interstellar = new Movies ({'{'} <br />
                         name: "Interstellar", <br />
                         year: 2013, <br />
                         actors: "macCaunaugey" <br />
@@ -1066,20 +1066,20 @@ function NodeCours({ copyText }) {
                 <p>Si on veut incorporer plusieurs objets à la fois nous utiliseront la methode <code>insertMany</code>. Ajoutons deux objets, deux films</p>
                 <pre>
                     <code>
-                        const Avengers = new Movies ({'{'}
+                        const Avengers = new Movies ({'{'} <br />
                         name: "Avengers", <br />
                         year: 2016, <br />
                         actors: "Dauney JR" <br />
                         {'}'}) <br /><br />
 
-                        const Jayce = new Movies ({'{'}
+                        const Jayce = new Movies ({'{'} <br />
                         name: "Jayce et les conquerants de la lumière", <br />
                         year: 1983, <br />
                         actors: "Jayce" <br />
                         {'}'}) <br />
                         //PulpeFiction.save(); <br />
                         //Interstellar.save(); <br />
-                        Movie.insertMany([Avengers, Jayce]) <br />
+                        Movies.insertMany([Avengers, Jayce]) <br />
                     </code>
                 </pre>
 
