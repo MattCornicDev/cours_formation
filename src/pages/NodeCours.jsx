@@ -2,20 +2,14 @@ import React from 'react'
 import Navbar from '../components/navigation/Navbar'
 import Footer from '../components/footer/Footer'
 import Iframe from 'react-iframe'
-import { useState } from 'react'
-import { CopyToClipboard } from 'react-copy-to-clipboard';
 import './nodeCours.css';
 
 
 
-function NodeCours({ copyText }) {
-
-    const [isCopied, setIsCopied] = useState(false);
+function NodeCours() {
 
     return (
         <>
-
-
             <Navbar />
             <nav className='nav flex-column'>
 
@@ -1043,10 +1037,6 @@ function NodeCours({ copyText }) {
                         console.log('serveur lancé sur le port 3000') <br />
                         {'}'}) <br />
                     </code>
-                    <input type="text" value={copyText} readOnly />
-                    <button type='button' value={copyText} readOnly>
-                        <span>{isCopied ? 'Copied!' : 'Copy'}</span>
-                    </button>
                 </pre>
 
                 <p>Si on actualise, mongo enregistre à nouveau la collection. il faut commenter <code>PulpeFiction.save()</code>. Si on veut enregistrer la nouvelle collection Interstellar par exemple il faudra ajouter <code>Insterstellar.save()</code><br /></p>
@@ -1233,7 +1223,15 @@ function NodeCours({ copyText }) {
 
 
 
-
+                <p>Exercice</p>
+                <ul>
+                    <li>Créer une base de donneé nommée groupWebDevDB</li>
+                    <li>Créer une collection nommée prenom</li>
+                    <li>Créer une seconde collection appelée nom</li>
+                    <li>Créer une troisieme collection appelée "age"</li>
+                    <li>Créer une quatrieme collection appelée "ville"</li>
+                    <li>Creer une cinquieme collection appelée "codePostal"</li>
+                </ul>
 
 
 

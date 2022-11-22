@@ -3,7 +3,7 @@ import { Navbar } from 'react-bootstrap'
 import Footer from '../components/footer/Footer'
 import { Container } from 'react-bootstrap'
 
-export default function React_cours() {
+export default function ReactCours() {
     return (
         <>
 
