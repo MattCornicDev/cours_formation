@@ -28,9 +28,9 @@ function NodeCours() {
 
 
                 <div className='d-inline'>
-                    <img className='logo_donneur_ordre' src="Logo-GRETA-Grand-Hainaut-500.jpg" alt="logo du greta" width="100px" /></div>
+                    <img className='logo_donneur_ordre' src={process.env.PUBLIC_URL + "/Logo-GRETA-Grand-Hainaut-500.jpg"} alt="logo du greta" width="100px" /></div>
                 <div className='d-inline'>
-                    <img className='logo_partenaires' src="logo_partenaires.png" alt="logo des partenaires financiers" width="100px" />
+                    <img className='logo_partenaires' src={process.env.PUBLIC_URL + "/logo_partenaires.png"} alt="logo des partenaires financiers" width="100px" />
                 </div>
             </nav>
 
@@ -41,7 +41,7 @@ function NodeCours() {
                 <h2>Qu'est ce que nodeJS</h2>
                 <div className="row">
                     <div className="col-md-4">
-                        <img src="rayan_dahl.jpg" alt=" Rayan Dahl" className='img-thumbnail' />
+                        <img src={process.env.PUBLIC_URL + "/rayan_dahl.jpg"} alt=" Rayan Dahl" className='img-thumbnail' />
                     </div>
                     <div className="col-md-8">
                         <p>créé par Ryan Dahl en 2009, NodeJS est une plateforme qui utilise le moteur JavaScript V8 de Chrome qui permet de développer des applications en utilisant du JavaScript coté server. Il est non bloquant et asynchrone. </p>
@@ -229,7 +229,7 @@ function NodeCours() {
                     </code>
                 </pre>
                 <p>Maintenant ouvrez votre navigateur et entrer dans la barre d'adresse l'adresse suivante http://localhost:8080</p>
-                <img src="nav_nodeServer.png" alt="Affichage du navigateur" width="600px" className='img-navigateur' />
+                <img src={process.env.PUBLIC_URL + "/nav_nodeServer.png"} alt="Affichage du navigateur" width="600px" className='img-navigateur' />
                 <p>Et <code><kbd>Ctrl + C</kbd></code> pour arrêter le server</p>
 
                 <h3>La norme HTTP</h3>
@@ -335,7 +335,7 @@ function NodeCours() {
                 <p>Lancer l'app avec <code>node server.js</code> et dans le navigateur http://localhost:8080</p>
 
                 <p>Et le server vous retourne le page HTML et interprète le code</p>
-                <img src="retour-server.png" alt="retourne la page html demandé" width="600px" className='img-navigateur' />
+                <img src={process.env.PUBLIC_URL + "/retour-server.png"} alt="retourne la page html demandé" width="600px" className='img-navigateur' />
 
                 <p>integrons maintenant plus de html</p>
 
@@ -719,7 +719,7 @@ function NodeCours() {
 
                 <p>Ouvrez votre IDE et entrer le code suivant</p>
 
-                <img src="/code_avec_express.png" alt="code des routes avec express" className='image-code' />
+                <img src={process.env.PUBLIC_URL + "/code_avec_express.png"} alt="code des routes avec express" className='image-code' />
 
                 <p>Importer Express avec la méthode require et créez un objet app en appelant la fonction express().
 
@@ -727,16 +727,16 @@ function NodeCours() {
 
                     Le code est beaucoup plus pratique que ce que nous avons fait plus haut avec les condition "if" imbriqués. On peut écrire autant de routes de cette façon qu'on le souhaite :</p>
 
-                <img src="/code_avec_express_plusieurs_routes.png" alt="code exemple avec express plusieurs routes" className='image-code' />
+                <img src={process.env.PUBLIC_URL + "/code_avec_express_plusieurs_routes.png"} alt="code exemple avec express plusieurs routes" className='image-code' />
 
                 <p>Autrement si aucune route ne correspond creer une page Not Found</p>
 
-                <img src="code_avec_express_page_introuvable.png" alt="code express page introuvable" className='image-code' />
+                <img src={process.env.PUBLIC_URL + "/code_avec_express_page_introuvable.png"} alt="code express page introuvable" className='image-code' />
 
                 <h3 id='routes_dynamiques'>Routes dynamiques</h3>
 
                 <p>Les routes dynamiques permettent d'ajouter des paramètres à notre URL</p>
-                <img src="code_avec_express_page_avec_parametre.png" alt="code avec express page avec parametre" className='image-code' />
+                <img src={process.env.PUBLIC_URL + "/code_avec_express_page_avec_parametre.png"} alt="code avec express page avec parametre" className='image-code' />
 
                 <h2 id='templates'>Les templates</h2>
 
@@ -752,15 +752,15 @@ function NodeCours() {
 
                 <p>Désormais inutile d'écrire du HTML dans le JavaScript, on va déléguer la gestion de la vue à notre moteur template</p>
 
-                <img src="route_home_ejs.png" alt="route home ejs" className='image-code' />
+                <img src={process.env.PUBLIC_URL + "/route_home_ejs.png"} alt="route home ejs" className='image-code' />
 
                 <p>Modifier la route pour les articles</p>
 
-                <img src="route_page_ejs.png" alt="Route de la page avec EJS" className='image-code' />
+                <img src={process.env.PUBLIC_URL + "/route_page_ejs.png"} alt="Route de la page avec EJS" className='image-code' />
 
                 <p>Et du coté html créer une page page-article.ejs dans un dossier views et lancer l'appli à l'adresse localhost:8080 /</p>
 
-                <img src="exemple_ejs.png" alt="EJS coté html" className='image-code' />
+                <img src={process.env.PUBLIC_URL + "/exemple_ejs.png"} alt="EJS coté html" className='image-code' />
 
                 <h2 id='middlewares'>Les middlewares <a href="https://expressjs.com/en/guide/using-middleware.html">(Cliquez ici pour lire la doc)</a></h2>
 
@@ -792,19 +792,19 @@ function NodeCours() {
 
                 <p>Créer un formulaire html</p>
 
-                <img src="formulaire_POST.png" alt="formulaire html" className='image-code' />
+                <img src={process.env.PUBLIC_URL + "/formulaire_POST.png"} alt="formulaire html" className='image-code' />
 
                 <p>lancez un serveur</p>
-                <img src="1_methode_POST.png" alt="code lancement serveur" className='image-code' />
+                <img src={process.env.PUBLIC_URL + "/1_methode_POST.png"} alt="code lancement serveur" className='image-code' />
 
                 <p>Ajouter une route get pour la page qu'on appellera message</p>
-                <img src="2_methode_POST.png" alt="code de la route message" className='image-code' />
+                <img src={process.env.PUBLIC_URL + "/2_methode_POST.png"} alt="code de la route message" className='image-code' />
 
 
 
                 <p>la methode post </p>
-                <img src="methode_POST.png" alt="methode post express" className='image-code' />
-                <img src="packageJson_methode_POST.png" alt="formulaire html" className='image-code' />
+                <img src={process.env.PUBLIC_URL + "/methode_POST.png"} alt="methode post express" className='image-code' />
+                <img src={process.env.PUBLIC_URL + "/packageJson_methode_POST.png"} alt="formulaire html" className='image-code' />
 
                 <h3 id='mongoose'>Mongoose</h3>
 
@@ -1262,12 +1262,12 @@ function NodeCours() {
 
                 <p>Executer ce code dans le fichier index.html</p>
 
-                <img src="/connexion_socket_io_html.png" alt="connexion socket.io coté html" className='image-code' />
+                <img src={process.env.PUBLIC_URL + "/connexion_socket_io_html.png"} alt="connexion socket.io coté html" className='image-code' />
 
 
                 <p>Executez ce code dans le fichier app.js</p>
 
-                <img src="/connexion_socket_io.png" alt="Code pour la connexion entre l'ordinateur et socket.io" className='image-code' />
+                <img src={process.env.PUBLIC_URL + "/connexion_socket_io.png"} alt="Code pour la connexion entre l'ordinateur et socket.io" className='image-code' />
 
                 <p>Aller à l'adresse <a href="http://localhost:8080">http://localhost:8080</a> le server vous renvoie "Communication établie avec socket.io" et la console vous informe que "Un client est connecté". Ceci indique tout à fonctionné</p>
 
