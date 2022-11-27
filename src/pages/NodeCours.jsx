@@ -26,6 +26,7 @@ function NodeCours() {
                 <a href="#supprimer">Supprimer et Ajouter des données</a>
                 <a href="#modifier">Modifier des données</a>
                 <a href="#Liens_entre_diff_collections">Relation collection</a>
+                <a href="#api">Les API's</a>
 
 
                 <div className='d-inline'>
@@ -1264,11 +1265,259 @@ function NodeCours() {
                     <li>Creer une cinquieme collection appelée "codePostal"</li>
                 </ul>
 
-                <h3>API's</h3>
+                <h3 id='api'>API's</h3>
 
                 <p>Application Programming Interfaces. Les API's permettent de communiquer entre deux applications. Elle permet d'effectuer des protocoles, de recuperer des objets des methodes ou fonctions. Elle interagit avec un système externe afin de recuperer des données</p>
                 <p>cliquer sur ce <a href="https://elephant-api.herokuapp.com/">Lien</a></p>
-                <p>Ici une API météo plus complexe <a href="https://openweathermap.org/">Open Weather</a>, créer un compte gratuit, une fois que c'est fait aller sur "Api Keys", copiez-la</p>
+                <p>Ici une API météo plus complexe <a href="https://openweathermap.org/">Open Weather</a>, créer un compte gratuit, une fois que c'est fait aller sur "Api Keys", copiez-la. On en aura besoin lorsque nous ferons des requetes GET </p>
+
+                <p>On clique sur l'onglet API et ensuite sur "api doc" dans Current Weather Data, recuperer call current by city name pour recuperer l'api avec le nom de la ville. </p>
+                <p>Copié coller le lien suivant <code>https://api.openweathermap.org/data/2.5/weather?q={'{'}city name{'}'}&appid={'{'}API key{'}'}</code> changer le nom de city name et entrer votre clé api. Une fois les données reçu remarquer que les temperatures sont en fahrenheit, dans la doc Use units il nous est indiquée que pour modifier l'unité de mesure Faranenheit en Celsus utiliser "units=metric"</p>
+
+                <p>Pour améliorer la lisibilité nous allons utiliser postman <a href="https://www.postman.com/">Telecharger Postman</a> Nous allons copié collé la requete que nous avons faite pour recuperer nos données météo et le coller dans postman en methode GET. <br /> Mais pour améliorer l'experience ne recopier que jusque weather sans les parmetres <code>https://api.openweathermap.org/data/2.5/weather</code>. Dans la rubrique key entrez "q" et donner la valeur de la ville "Paris", "appid" entrer votre key, "units" entrer "metric" </p>
+
+                <p>Vous pouvez ajouter une extension chrome pour lire les formats JSON. <br />
+                    Dans la partie weather cet objet contien un tableau donc pour selection un objet de ce tableau il faudra utiliser cette syntaxe pour cet exemple <code>weather[0].description</code> 0 etant l'indice du premier element du tableau</p>
+
+                <h6>API avec module HTTP</h6>
+
+                <p>Creer un dossier appeler "weather". creer un fichier appeler <code>server.js</code>initialiser npm vous pouvez passer la configuration si vous ajoute -y à npm init. Installer le module express. Dans le fichier server importer les modules dont le module http et et dans postman recuperer l'url que vous aller integrer dans la methode get de http <br />
+
+                    <pre>
+                        <code>
+                            const express = require('express') <br />
+                            const app = express() <br />
+                            const https = require('https') <br />
+                            const url = "https://api.openweathermap.org/data/2.5/weather?q=Paris& <br /> appid=ce385607a5755d07012416f5d315a3d0&units=metric" <br /><br />
+
+                            https.get(url, (req, res) {'=> { '} <br />
+                            console.log(req) <br />
+                            {'}'}) <br />
+
+                            app.get('/', (req, res) {'=> {'} <br />
+                            res.send('Salut') <br />
+                            {'}'}) <br />
+
+                            app.listen(3000, () {'=> {'} <br />
+                            console.log('le serveur est lancé') <br />
+                            {'}'}) <br />
+                        </code>
+                    </pre>
+
+                    on peut integrer le tout dans la methode get</p>
+
+                <pre>
+                    <code>
+                        const express = require('express') <br />
+                        const app = express() <br />
+                        const https = require('https') <br />
+                        const url = "https://api.openweathermap.org/data/2.5/weather?q=Paris& <br /> appid=ce385607a5755d07012416f5d315a3d0&units=metric" <br /> <br />
+
+
+                        app.get('/', (req, res) {' => {'} <br />
+                        https.get(url, (request, response) {' => {'} <br />
+                        console.log(request) <br />
+                        {'}'}) <br />
+                        {'}'}) <br />
+
+                        app.listen(3003, () {'=> {'} <br />
+                        console.log('le serveur est lancé') <br />
+                        {'}'}) <br />
+                    </code>
+                </pre>
+
+                <p>Dans le module https on n'est plus obligé de mettre un req comme parametre. <br /> Maintenant recuperons nos données weather. À l'interieur de l'https on utilise une methode appelé on. et à l'interieur va prendre une information "data", en second paramatre une fonction call back. Si on console.log data la console nous renvoi une information en hexadecimal. Pour les recuperer en format JSON</p> <br />
+
+                <pre>
+                    <code>
+                        https.get(url, (res) {'=> {'} <br />
+                        console.log(res) <br />
+                        res.on("data", (data) {'=> {'} <br />
+                        console.log(data) <br />
+                        {'}'}) <br />
+                        {'}'}) <br />
+                    </code>
+                </pre>
+
+                <p>Pour recuperer ses données en format JSON on va utiliser la methode <code>JSON.parse(data). Mettons là dans une constante qu'on appelera meteo_data</code></p><br />
+
+                <pre>
+                    <code>
+                        https.get(url, (res) {'=> {'} <br />
+                        console.log(res) <br />
+                        res.on("data", (data) {'=> {'} <br />
+                        const meteo_data = JSON.parse(data) <br />
+                        console.log(meteo_data) <br />
+                        {'}'}) <br />
+                        {'}'}) <br />
+                    </code>
+                </pre>
+
+                <p>Affichons la temperature de notre ville dans la console pour cela utilison la commande <code>const temperature = meteo_data.main.temp</code> et console log temperature</p>
+                <pre>
+                    <code>
+                        https.get(url, (res) {'=> {'} <br />
+                        console.log(res) <br />
+                        res.on("data", (data) {'=> {'} <br />
+                        const meteo_data = JSON.parse(data) <br />
+                        const temperature = meteo_data.main.temp <br />
+
+                        console.log(temperature) <br />
+
+                        {'}'}) <br />
+                        {'}'}) <br />
+
+                    </code>
+                </pre>
+                <p>Maintenant recuperer "la description"</p>
+                <pre>
+                    <code>
+                        https.get(url, (res) {'=> {'} <br />
+                        console.log(res) <br />
+                        res.on("data", (data) {'=> {'} <br />
+                        const meteo_data = JSON.parse(data) <br />
+                        const temperature = meteo_data.main.temp <br />
+                        const description = meteo_data.weather[0].description <br />
+                        console.log(temperature) <br />
+                        console.log(description) <br />
+                        {'}'}) <br />
+                        {'}'}) <br />
+
+                    </code>
+                </pre>
+                <p>Retenez que pour recuperer des données json on utilisera JSON.parser</p>
+
+                <p>On veut maintenant renvoyer ses données dans notre page. Copier le https et coller le dans le chemin get('/')</p>
+
+                <pre>
+                    <code>
+                        app.get('/', (req, res) {'=> {'} <br />
+                        https.get(url, (response) {'=> {'} <br /> <br />
+
+                        response.on("data", (data) {'=> {'} <br />
+                        const meteo_data = JSON.parse(data) <br />
+                        const temperature = meteo_data.main.temp <br />
+                        const description = meteo_data.weather[0].description <br />
+                        console.log(temperature) <br />
+                        console.log(description) <br />
+                        {'}'}) <br />
+                        {'}'}) <br />
+                        <br />
+                        {'}'}) <br />
+                    </code>
+                </pre>
+
+                <p>Si j'enregistre et je rafraichis ma page la console me retourne mon console.log . Si tout va bien affichons dans notre page nos infos avec la methode send <code>res.send("La température est de ma ville est de : " + temperature + "degrés")</code>. Pour envoyer une deuxieme info nous ne pouvons pas utiliser la methode send car c'est une methode qui est utiliser pour le final nous allons donc utiliser la methode write() et avant la methode send </p>
+
+                <pre>
+                    <code>
+                        app.get('/', (req, res) {'=> {'} <br />
+                        https.get(url, (response) {' => {'}
+
+                        response.on("data", (data) {'=> {'} <br />
+                        const meteo_data = JSON.parse(data) <br />
+                        const temperature = meteo_data.main.temp <br />
+                        const description = meteo_data.weather[0].description <br />
+                        console.log(temperature) <br />
+                        console.log(description) <br /> <br />
+
+                        res.write("La desciption est : " + description) <br />
+                        res.write("La temperature de ma ville est de : " + temperature + " degrés") <br />
+                        res.send() <br />
+                        {'}'}) <br />
+                        {'}'}) <br />
+
+                        {'}'}) <br />
+                    </code>
+                </pre>
+
+                <p>Utlisons maintenant un formulaire. Creons un fichier index.html et créer un formulaire <br /> import body-parser pour recuperer la valeur des inputs. Faites un require. Initialisons le <code>app.use(bodyParser.urlencoded{'{'}extended : false{'}'})</code>. <br />Occupons nous de la methode post dans la route get retirer la code à l'interieur et mettez-y </p> <br />
+
+                <pre>
+                    <code>
+                        app.get('/', (req, res) {'=> {'} <br />
+                        res.sendFile(__dirname + "/index.html") <br />
+
+                        {'}'}) <br />
+                    </code>
+                </pre>
+                <p>Si on relance on aura notre formulaire. Dans le server.js ajouter la route post </p> <br />
+
+                <pre>
+                    <code>
+                        app.post('/', (req, res) {'=> {}'} <br />
+                        const ville = req.body.ville <br />
+                        console.log(ville) <br />
+                        {'}'}) <br />
+                    </code>
+                </pre>
+                <p>Verifions que l'on recupere bien le nom de la ville qu'on entre. Copions collons notre code commenté dans la methode post</p><br />
+
+                <pre>
+                    <code>
+                        app.post('/', (req, res) {'=> {'} <br />
+                        const ville = req.body.ville <br />
+                        https.get(url, (response) {'=> {'} <br /><br />
+
+                        response.on("data", (data) {'=> {'} <br />
+                        const meteo_data = JSON.parse(data) <br />
+                        const temperature = meteo_data.main.temp <br />
+                        const description = meteo_data.weather[0].description <br />
+                        console.log(temperature) <br />
+                        console.log(description) <br /> <br />
+
+                        res.write("La desciption est : " + description) <br />
+                        res.write("La temperature de ma ville est de : " + temperature + " degrés") <br />
+                        res.send() <br />
+                        {'}'}) <br />
+                        {'}'}) <br />
+                        {'}'}) <br />
+                    </code>
+                </pre>
+                <p>Attention il faut maintenant changer le nom de la ville indiqué dans l'url par ville. Donc concatenons en entrant la const ville cela le rendra dynamique et integrons la const url dans la methode get</p>
+                <pre>
+                    <code>
+                        const url = "https://api.openweathermap.org/data/2.5/weather?q=" + ville + "&appid=ce385607a5755d07012416f5d315a3d0&units=metric"
+                    </code>
+                </pre>
+                <br />
+                <p>Modifions la res.wite pour indiquer la const ville plus que le nom de la ville en dur</p>
+                <pre>
+                    <code>
+                        app.post('/', (req, res) {'{'} <br />
+                        const ville = req.body.ville <br />
+                        const url = "https://api.openweathermap.org/data/2.5/weather?q=" + ville + "&appid=ce385607a5755d07012416f5d315a3d0&units=metric" <br />
+                        https.get(url, (response) {'=> {'} <br /><br />
+
+                        response.on("data", (data) {'=> {'} <br />
+                        const meteo_data = JSON.parse(data) <br />
+                        const temperature = meteo_data.main.temp <br />
+                        const description = meteo_data.weather[0].description <br />
+                        console.log(temperature) <br />
+                        console.log(description) <br /><br />
+
+                        res.write("La desciption à " + ville + "est : " + description) <br />
+                        res.write("La temperature de " + ville + " est de : " + temperature + " <br /> degrés") <br />
+                        res.send()  <br />
+                        {'}'}) <br />
+                        {'}'}) <br />
+
+                        {'}'}) <br />
+                    </code>
+                </pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
