@@ -11,7 +11,7 @@ function NodeCours() {
     return (
         <>
             <Navbar />
-            <nav className='nav flex-column'>
+            <nav className='nav flex-column navbar-expand-md' >
 
                 <a href="#creer_un_erveur_http">Serveur HTTP</a>
                 <a href="#npm_yarn">ExpressJS</a>
@@ -25,6 +25,7 @@ function NodeCours() {
                 <a href="#bdd_terminal">Interagir avec la BDD via le terminal</a>
                 <a href="#supprimer">Supprimer et Ajouter des données</a>
                 <a href="#modifier">Modifier des données</a>
+                <a href="#Liens_entre_diff_collections">Relation collection</a>
 
 
                 <div className='d-inline'>
@@ -1221,7 +1222,37 @@ function NodeCours() {
                         {'}'} )</code>
                 </pre>
 
+                <h4 id='Liens_entre_diff_collections'>Etablir des liens entre différentes collections</h4>
 
+                <p>Creons une deuxieme table qu'on appelera film favoris, <br />
+                    cette table aura un nom, un age et un film favoris ce film favoris ne prendra pas un string mais il sera relié à movies, on crée le model
+                </p>
+
+                <pre>
+                    <code>
+                        const peopleSchema = new mongoose.Schema({'{'} <br />
+                        name: String, <br />
+                        age: Number, <br />
+                        favoriteMovie: moviesSchema <br />
+                        {'}'}); <br />
+                    </code>
+                </pre>
+                <pre>
+                    <code>
+                        const People = mongoose.model('People', peopleSchema); <br />
+                    </code>
+                </pre>
+                <p>On va pouvoir créer un nouvelle personne</p>
+                <pre>
+                    <code>
+                        const Marie = new People({'{'} <br />
+                        name: "Marie", <br />
+                        age: 44, <br />
+                        favoriteMovie: Avengers <br />
+                        {'}'}) <br />
+                        Marie.save(); <br />
+                    </code>
+                </pre>
 
                 <p>Exercice</p>
                 <ul>
@@ -1232,6 +1263,12 @@ function NodeCours() {
                     <li>Créer une quatrieme collection appelée "ville"</li>
                     <li>Creer une cinquieme collection appelée "codePostal"</li>
                 </ul>
+
+                <h3>API's</h3>
+
+                <p>Application Programming Interfaces. Les API's permettent de communiquer entre deux applications. Elle permet d'effectuer des protocoles, de recuperer des objets des methodes ou fonctions. Elle interagit avec un système externe afin de recuperer des données</p>
+                <p>cliquer sur ce <a href="https://elephant-api.herokuapp.com/">Lien</a></p>
+                <p>Ici une API météo plus complexe <a href="https://openweathermap.org/">Open Weather</a>, créer un compte gratuit, une fois que c'est fait aller sur "Api Keys", copiez-la</p>
 
 
 
