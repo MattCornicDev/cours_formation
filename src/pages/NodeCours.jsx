@@ -25,6 +25,7 @@ function NodeCours() {
                 <a href="#bdd_terminal">Interagir avec la BDD via le terminal</a>
                 <a href="#supprimer">Supprimer et Ajouter des données</a>
                 <a href="#modifier">Modifier des données</a>
+                <a href="#Liens_entre_diff_collections">Etablir des liens</a>
 
 
                 <div className='d-inline'>
@@ -1220,6 +1221,12 @@ function NodeCours() {
                         {'}'} <br />
                         {'}'} )</code>
                 </pre>
+
+                <h4 id='Liens_entre_diff_collections'>Etablir des liens entre différentes collections</h4>
+
+                <p>Creons une deuxieme table qu'on appelera film favoris, <br />
+                    cette table aura un nom, un age et un film favoris ce film favoris ne prendra pas un string mais il sera relié à movies, on crée le model</p>
+
 
 
 

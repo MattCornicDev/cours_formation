@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './affichageCours.css';
 import 'bootstrap/dist/css/bootstrap.css';
+import { Container, Row, Col } from 'react-bootstrap';
+
 
 
 
@@ -11,15 +13,23 @@ export default class AffichageCours extends Component {
     render() {
         return (
 
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Git</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Cours git</h6>
-                    <p class="card-text">Aide mémoire des commandes git les plus utilisés ou les plus intéressantes.</p>
-                    <Link to="/gitCours">Click</Link>
-                    <a href="#" class="card-link">Another link</a>
+            <>
+                <div>
+                    <Link to="/gitCours">
+                        <h3 className="badge bg-warning">
+                            Cours Git</h3>
+                    </Link>
+                    <Link to="/nodeCours">
+                        <h3 className="badge bg-warning">
+                            Cours node JS</h3>
+                    </Link>
+                    <Link to="/react_cours">
+                        <h3 className="badge bg-warning">
+                            Cours React JS</h3>
+                    </Link>
                 </div>
-            </div>
+
+            </>
 
             /*
         <Container>
