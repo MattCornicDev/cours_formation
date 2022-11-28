@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import Navbar from '../components/navigation/Navbar'
 import TableNode from '../components/tableMatieres/TableNode'
+import Footer from '../components/footer/Footer';
+
 
 export default class gitCours extends Component {
     render() {
@@ -82,9 +84,9 @@ export default class gitCours extends Component {
                         <kbd>git diff &lt;commit&gt; // compare l'état actuel au commit &lt;commit&gt;</kbd><br />
                         <kbd>git diff &lt;commit&gt;..&lt;commit&gt; // compare les fichiers entre deux commits</kbd>
                     </code>
-
-
-
+                </div>
+                <div>
+                    < Footer />
                 </div>
             </>
 
