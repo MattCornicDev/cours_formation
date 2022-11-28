@@ -13,23 +13,22 @@ export default class AffichageCours extends Component {
     render() {
         return (
 
-            <>
-                <div>
-                    <Link to="/gitCours">
-                        <h3 className="badge bg-warning">
-                            Cours Git</h3>
-                    </Link>
-                    <Link to="/nodeCours">
-                        <h3 className="badge bg-warning">
-                            Cours node JS</h3>
-                    </Link>
-                    <Link to="/react_cours">
-                        <h3 className="badge bg-warning">
-                            Cours React JS</h3>
-                    </Link>
-                </div>
+            <div>
+                <Link to="/gitCours">
+                    <h3 className="badge bg-warning">
+                        Cours Git</h3>
+                </Link>
+                <Link to="/nodeCours">
+                    <h3 className="badge bg-warning">
+                        Cours node JS</h3>
+                </Link>
+                <Link to="/react_cours">
+                    <h3 className="badge bg-warning">
+                        Cours React JS</h3>
+                </Link>
+            </div>
 
-            </>
+
 
             /*
         <Container>
