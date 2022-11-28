@@ -3,7 +3,7 @@ import Home from './pages/Home'
 import GitCours from './pages/GitCours';
 import NodeCours from './pages/NodeCours';
 import ReactCours from './pages/ReactCours';
-import './app.css'
+import './App.css'
 
 
 function App() {
