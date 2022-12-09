@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import GitCours from './pages/GitCours';
 import NodeCours from './pages/NodeCours';
 import ReactCours from './pages/ReactCours';
+import SqlCours from './pages/SqlCours';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/GitCours" exact element={<GitCours />} />
           <Route path='/NodeCours' exact element={<NodeCours />} />
           <Route path='/ReactCours' exact element={<ReactCours />} />
+          <Route path='/SqlCours' exact element={<SqlCours />} />
         </Routes>
       </BrowserRouter>
     </>
