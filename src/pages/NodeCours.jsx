@@ -28,8 +28,6 @@ function NodeCours() {
                 <a href="#Liens_entre_diff_collections">Relation collection</a>
                 <a href="#api">Les API's</a>
 
-
-
                 <div className='d-inline'>
                     <img className='logo_donneur_ordre' src={process.env.PUBLIC_URL + "/Logo-GRETA-Grand-Hainaut-500.jpg"} alt="logo du greta" width="150px" /></div>
                 <div className='d-inline'>
@@ -769,6 +767,8 @@ function NodeCours() {
 
                 <p>Dans la documentation EJS allez sur Tags <a href="https://ejs.co/#docs">documentation</a> cela nous permet d'ecrire la syntaxe ejs</p>
 
+
+
                 <h2 id='middlewares'>Les middlewares <a href="https://expressjs.com/en/guide/using-middleware.html">(Cliquez ici pour lire la doc)</a></h2>
 
                 <p>La base d'express sont les middleweares. il s'agit de morceaux d'application qui proposent des micro fonctionnalité. Il est possible de ne charge uniquement les middleweares dont on a besoin. Pour les utiliser il suffit d'appeler la méthode app.use() après l'installation du middleware dont on a besoin via NPM. L'ordre d'appel des middlewares est très important.</p>
@@ -1006,14 +1006,6 @@ function NodeCours() {
 
                 <p>Nous allons interagir avec notre base de donnée via le terminal</p>
 
-
-
-
-
-
-
-
-
                 <pre>
                     <code>
                         const express = require('express') <br />
@@ -1050,11 +1042,11 @@ function NodeCours() {
 
                 <pre>
                     <code>
-                        const Interstellar = new Movies ({'{'} <br />
+                        const Interstellar = new Movies {'({'} <br />
                         name: "Interstellar", <br />
                         year: 2013, <br />
                         actors: "macCaunaugey" <br />
-                        {'}'}) <br />
+                        {'})'}<br />
                         //PulpeFiction.save(); <br />
                         Interstellar.save();
                     </code>
@@ -1513,10 +1505,230 @@ function NodeCours() {
                     </code>
                 </pre>
 
+                <p>mettre url à l'interieur de la methode post</p>
+
+                <pre>
+                    <code>
+                        const express = require('express') <br />
+                        const app = express() <br />
+                        const https = require('https') <br />
+                        const bodyParser = require('body-parser') <br /><br />
 
 
 
+                        app.use(bodyParser.urlencoded({'{'} extended: false {'}'})) <br /><br />
 
+                        app.get('/', (req, res) {'=>{'} <br />
+                        res.sendFile(__dirname + "/index.html") <br />
+
+                        {'}'}) <br /><br />
+                        app.post('/', (req, res) {'=> {'} <br />
+                        const ville = req.body.ville <br />
+                        const url = "https://api.openweathermap.org/data/2.5/weather?q=" + ville + <br /> "&appid=ce385607a5755d07012416f5d315a3d0&units=metric" <br />
+                        https.get(url, (response) {'=> {'} <br />
+
+                        response.on("data", (data) {'=> {'} <br />
+                        const meteo_data = JSON.parse(data) <br />
+                        const temperature = meteo_data.main.temp <br />
+                        const description = meteo_data.weather[0].description <br />
+                        console.log(temperature) <br />
+                        console.log(description) <br /><br />
+
+                        res.write("La desciption à " + ville + "est : " + description) <br />
+                        res.write("La temperature de " + ville + " est de : " + temperature + " degrés") <br />
+                        res.send() <br />
+                        {'}'}) <br />
+                        {'}'}) <br />
+
+                        {'}'}) <br />
+
+                        app.listen(3004, () {'=> {'} <br />
+                        console.log('le serveur est lancé') <br />
+                        {'}'}) <br />
+                    </code>
+                </pre>
+
+                <h3>EJS Embeded JavaScript en plus poussé</h3>
+
+                <p>passer en commentaire la methode post nous n'en n'aurons pas besoin. Dans la methode get passons un tableau</p>
+
+                <pre>
+                    <code>
+                        const express = require('express') <br />
+                        const app = express() <br />
+                        const https = require('https') <br />
+                        const bodyParser = require('body-parser') <br /><br />
+
+                        app.use(bodyParser.urlencoded({'{'} extended: false {'}'})) <br /><br />
+
+                        app.get('/', (req, res) {'=>{'} <br />
+                        const tab = ["citron","pasteque","pomme","banane"] <br />
+                        const fruit = tab[Math.floor(Math.random()*4)] <br />
+                        //res.sendFile(__dirname + "/index.html") <br />
+                        res.send(fruit)
+                        {'}'}) <br /><br />
+
+                        app.listen(3004, () {'=> {'} <br />
+                        console.log('le serveur est lancé') <br />
+                        {'}'}) <br />
+                    </code>
+                </pre>
+
+                <p>Je creer une tableau avec comme élément des frutis et je veux afficher de maniere aleatoire des fruits de mon tableau. <br />
+                    Maintenant essayons d'afficher une couleur en fonction du fruit.</p>
+
+                <pre>
+                    <code>
+                        const express = require('express') <br />
+                        const app = express() <br />
+                        const https = require('https') <br />
+                        const bodyParser = require('body-parser') <br /><br />
+
+                        app.use(bodyParser.urlencoded({'{'} extended: false {'}'})) <br /><br />
+
+                        app.get('/', (req, res) {'=>{'} <br />
+                        const tab = ["citron","pasteque","pomme","banane"] <br />
+                        const fruit = tab[Math.floor(Math.random()*4)] <br />
+                        if(fruit == "banane"){'{'} <br />
+                        res.send("{'<h1'} style='color:yellow'{'>'}" + fruit + "{'</h1>'}") <br />
+                        {'}'} <br />else if(fruit == "pasteque"){'{'} <br />
+                        res.send("{'<h1'} style='color:red'{'>'}" + fruit + "{'</h1>'}") <br /><br />
+                        //res.sendFile(__dirname + "/index.html") <br />
+                        {'}'}
+                        {'}'}) <br /><br />
+
+                        app.listen(3004, () {'=> {'} <br />
+                        console.log('le serveur est lancé') <br />
+                        {'}'}) <br />
+                    </code>
+                </pre>
+                <p>Vous comprenez qu'il devriendra vite difficile de tester toutes les conditions. C'est pourquoi on va utiliser un template, en l'occurence ici EJS</p>
+
+                <pre>
+                    <code>
+                        const express = require('express') <br />
+                        const app = express() <br />
+                        const https = require('https') <br />
+                        const bodyParser = require('body-parser') <br /><br />
+
+                        app.use(bodyParser.urlencoded({'{'} extended: false {'}'})) <br /><br />
+
+                        app.get('/', (req, res) {'=>{'} <br />
+                        const tab = ["citron","pasteque","pomme","banane"] <br />
+                        const fruit = tab[Math.floor(Math.random()*4)] <br /><br />
+                        //Nous allons envoyer vers le template le fruit <br /><br />
+                        //res.sendFile(__dirname + "/index.html") <br />
+                        {'}'}
+                        {'}'}) <br /><br />
+
+                        app.listen(3004, () {'=> {'} <br />
+                        console.log('le serveur est lancé') <br />
+                        {'}'}) <br />
+                    </code>
+                </pre>
+
+                <p>Pour ecrire du ejs il faudra l'extention et une syntaxe special</p>
+                <p>pour installer ejs <code>npm i ejs</code> ou <code>yarn add ejs</code>. On fait un require <code>const ejs = require('ejs')</code> . Il faudra maintenant initialiser ejs dans notre page. On dira donc à notre server qu'il peut avoir accès à des fichiers dont l'extention est .ejs pour cela entrer cette ligne de code <code>app.set("view engine", "ejs")</code> cela signifie tu as acces a un moteur de template qui se nomme ejs. via un dossier qui s'appelera views. <br /> Dans la racine du projet créer un dossier nommé ""views" </p>
+
+                <pre>
+                    <code>
+                        const express = require('express') <br />
+                        const app = express() <br />
+                        const https = require('https') <br />
+                        const bodyParser = require('body-parser') <br /><br />
+
+                        app.use(bodyParser.urlencoded({'{'} extended: false {'}'})) <br /><br />
+
+                        app.get('/', (req, res) {'=>{'} <br />
+                        const tab = ["citron","pasteque","pomme","banane"] <br />
+                        const fruit = tab[Math.floor(Math.random()*4)] <br /><br />
+                        //Nous allons envoyer vers le template le fruit <br /><br />
+                        res.render('index',{'{'}objet : fruit {'}'}) <br />
+
+                        {'}'}) <br /><br />
+
+                        app.listen(3004, () {'=> {'} <br />
+                        console.log('le serveur est lancé') <br />
+                        {'}'}) <br />
+                    </code>
+                </pre>
+
+                <p>Desormais plutot que de faire un <code>res.sendFile()</code> nous allons utiliser la methode <code>render()</code>. Dans la methode render inutilse de mettre l'extention .ejs car dans l'initialisation nous lui avons dit qu'il s'agissait de dossier .ejs et il sait qu'il doit aller voir dans le dossier views donc inutile egalement de mettre le chemin. La methode prend un second parametre, il s'agit d'un objet <code>res.render('index',{'{'}objet : fruit {'}'})</code>. Dans mon index.ejs je vais pouvoir reutiliser cet objet. <br />Testons mainantenant dans le fichier ejs</p>
+
+                <img src={process.env.PUBLIC_URL + "/media/scriptlet_tag.png"} alt="scriptlet tag ejs" className='image-code' />
+
+                <h3>Ajouter du style à nos documents ejs</h3>
+
+                <p>si vous creer une feuille de style <code>style.css</code> et que vous l'a lier dans votre html elle ne sera pas reconnaitra pas. Pour ce faire nous allons faire passer nos fichiers en statique. Dans le fichier .js entrer le code suivant <code>app.use(express.static("public"))</code> à l'interieur on va specifier un dossier qu'on nommera public</p>
+
+                <img src={process.env.PUBLIC_URL + "/media/scriptlet_tag_2.png"} alt="scriptlet tag" className='image-code' />
+
+                <h3>Layout</h3>
+
+                <p>creons trois nouvelles pages dans le dossier views, about.ejs, header.ejs et footer.ejs. Decoupons les parties header et footer et coller le dans le fichier header et footer. <br />Dans le fichier où je souhaite voir mon header et footer je vais mettre un include, <code> {'<%-'} include("header.ejs"); {'-%>'}</code></p>
+
+                <img src={process.env.PUBLIC_URL + "/media/scriptlet_tag_3.png"} alt="scriptlet tag" className='image-code' />
+
+                <p>Faisons pareil pour la page "about" et modifions dans le script.js le fichier pour qu'il renvoie à "about"</p>
+
+                <h3>Liaison entre EJS Et notre API weather</h3>
+                <p>recuperer les fichiers ressources via un clone de git@github.com:MattCornicDev/Cours_lier_EJS_API.git. <br />Mettez les deux fichiers .ejs dans un dossier nommé "views". Creer une fichier server.js et introduiser le contenu du server.js du projet "weather". <br /> Vous pouvez passer en commentaire les script dont nous n'avons plus besoin. Faites un render pour renvoyer la page index <code>res.render('index',{ })</code> on renvoie la page index et en parametre nous n'avons pas encore d'objet donc nous ne renvoyons rien ou un objet vide. <br />
+                    Dans l'index.ejs ajoutons au formulaire le chemin vers le home "/" à l'action. Et pour le button ajouter un type submit </p>
+                <p>Si j'ajoute une ville on nous renvoi "Cannot POST /", normal car nous n'avons pas encore fait de methode post. Retirer les lignes dont nous n'avons plus besoin</p>
+
+                <pre>
+                    <code>
+                        console.log(temperature) <br />
+                        console.log(description) <br /><br />
+
+                        res.write("La desciption à " + ville + "est : " + description) <br />
+                        res.write("La temperature de " + ville + " est de : " + temperature + " degrés") <br />
+                        res.send() <br />
+                    </code>
+                </pre>
+
+                <p>Maintenant plutot que de recuperer la temperature je vais creer un nouvelle objet meteo
+                    <pre>
+                        <code>
+                            const temperature = meteo_data.main.temp <br />
+                            const description = meteo_data.weather[0].description <br />
+                        </code>
+                    </pre>
+                    passons-les en commentaire. Creons un tableau appeler <code>const tableau_weather = {'['}{']'}</code>
+                </p>
+                <p>
+                    <pre>
+                        <code>
+                            const meteo = {'{'} <br />
+                            city: ville, <br />
+                            temperature: meteo.data.main.temp, <br />
+                            description: meteo_data.weather[0].description, <br />
+                            icon: meteo_data.weather[0].icon
+                            {'}'}
+                        </code>
+                    </pre>
+                    une fois l'objet creer il faut pusher le tout dans notre tableau.
+                    <pre>
+                        <code>
+                            tableau_weather.push(meteo)
+                        </code>
+                    </pre>
+                    ensuite on fait un res.render et lui passer un objet : mon tableau "tableau_weather" il s'appelera tableau et prendra comme valeur
+                    <pre>
+                        <code>
+                            res.render('weather', {'{'}tableau: tableau_weather {'}'})
+                        </code>
+                    </pre>
+                </p>
+                <p>recuperer l'icon: Dans les weather condition <a href="https://openweathermap.org/weather-conditions">ici</a>. Open weather map a une url pour chaque icon et reucperer ce lien "http://openweathermap.org/img/wn/10d@2x.png" nous allons effacer le 10d pour le remplacer par le notre et pour ça on aura besoin de ejs</p>
+
+                <pre>
+                    <code>
+                        http://openweathermap.org/img/wn/10d@2x.png
+                    </code>
+                </pre>
+
+                <p>Nous allons parcourir notre tableau et pour ça on aura besoin d'une boucle for</p>
 
 
 

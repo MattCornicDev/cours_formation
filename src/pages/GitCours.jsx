@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Navbar from '../components/navigation/Navbar'
-import TableNode from '../components/tableMatieres/TableNode'
 import Footer from '../components/footer/Footer';
 
 
@@ -58,7 +57,7 @@ export default class gitCours extends Component {
                     <p>commit</p>
                     <pre>
                         <code>
-                            <kbd>git commit -m "Message du commit</kbd>
+                            <kbd>git commit -m "Message du commit"</kbd>
                         </code>
                     </pre>
 
@@ -84,11 +83,20 @@ export default class gitCours extends Component {
                         <kbd>git diff &lt;commit&gt; // compare l'état actuel au commit &lt;commit&gt;</kbd><br />
                         <kbd>git diff &lt;commit&gt;..&lt;commit&gt; // compare les fichiers entre deux commits</kbd>
                     </code>
+                    <p>Annuler un merge</p>
+                    <code>
+                        <kbd>git reset</kbd>
+                    </code>
+
+
+                    <div>
+                        <Footer />
+                    </div>
                 </div>
-                <div>
-                    < Footer />
-                </div>
+
+
             </>
+
 
         )
     }
