@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './affichageCours.css';
-import Tilt from 'react-vanilla-tilt';
-import Card from 'react-bootstrap/Card';
-import { Container, Col, Row } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.css';
+
+
+
 
 
 
