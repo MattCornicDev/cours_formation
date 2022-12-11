@@ -16,8 +16,11 @@ const Sql = () => {
                 <a href="#les_types">Les types</a>
                 <a href="#ajout_contenu">Ajout contenu</a>
                 <a href="#concat_substring">Concat et substring</a>
-                <a href="#exercice">Exercice</a>
-                <a href="#correction">Exercice</a>
+                <a href="#exercice1">Exercice 1</a>
+                <a href="#correction1">Correction Ex 1</a>
+                <a href="#exercice2">Exercice 2</a>
+                <a href="#exercice3">Exercice 3</a>
+                <a href="#correction1">Correction Ex 1</a>
 
 
                 <div className='d-inline'>
@@ -153,7 +156,7 @@ const Sql = () => {
                 <br />
 
 
-                <h2 id='exercice'>EXERCICE</h2>
+                <h2 id='exercice1'>EXERCICE 1</h2>
 
                 <p>
                     CREER UNE TABLE table1 AVEC id ,prenom,   nom, month1,month2,month3,month4,month5 COMME COLONNES; <br />
@@ -170,7 +173,7 @@ const Sql = () => {
                     <br />
 
 
-                    EXERCICE <br />
+                    <h2 id='exercice2'>EXERCICE 2</h2> <br />
 
                     **** SUM() PERMET DE SOMMER DES ENTIERS <br />
                     CREER UNE TABLE  AVEC    nom,prenom,numero_de_candidat, nombre de musiques <br /> ecoutees sur un mois. Vous allez ajouter 4 lignes pour un meme utilisateur (avec un nombre de musiques ecoutees differentes a chaque fois ). <br /><br />
@@ -182,7 +185,7 @@ const Sql = () => {
 
                     -LE MEILLEUR SCORE DE CHAQUE UTILISATEUR EN LES CLASSANT PAR RAPPORT A LEUR SCORE TOTAL DU MEILLEUR AU PIRE <br /><br />
 
-                    EXERCICE <br />
+                    <h2 id='exercice3'>EXERCICE 3</h2> <br />
 
                     CREER UNE TABLE ppl2 AVEC NOMS DU jeu_music (id,prenom,nom) <br />
 
@@ -192,7 +195,7 @@ const Sql = () => {
 
                 </p>
 
-                <h2 id='correction'>Correction</h2>
+                <h2 id='correction1'>Correction Exercice 1</h2>
                 <p>
                     <pre>
                         <code>
