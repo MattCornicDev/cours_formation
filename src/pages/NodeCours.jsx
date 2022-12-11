@@ -27,6 +27,7 @@ function NodeCours() {
                 <a href="#modifier">Modifier des données</a>
                 <a href="#Liens_entre_diff_collections">Relation collection</a>
                 <a href="#api">Les API's</a>
+                <a href="#exercice">Exercice</a>
 
                 <div className='d-inline'>
                     <img className='logo_donneur_ordre' src={process.env.PUBLIC_URL + "/Logo-GRETA-Grand-Hainaut-500.jpg"} alt="logo du greta" width="150px" /></div>
@@ -1761,7 +1762,33 @@ function NodeCours() {
 
 
 
+                <h2 id='exercice'>Exercice</h2>
 
+                <p> Info relative au calcul du nombre de carreaux : </p> <br />
+
+                <p> Carreaux 15 x 15 cm : il vous faut 45 carreaux au m² <br /><br />
+
+
+
+                    1. Créez un fichier calculCarrelage.html dans un nouveau dossier carrelage que vous allez créer au préalable. <br />
+
+                    2. Cette page html aura pour titre ‘’Calcul Carrelage’’. <br />
+
+                    3. Ajoutez un formulaire HTML, ce dernier enverra via une méthode post, une requête vers notre server. Ce formulaire aura 1 input ; il contiendra la surface de notre pièce que l’on veut carreler. <br />
+
+                    4. Ajoutez un bouton “Renvoyer le nombre de carreaux nécessaires” <br />
+
+                    5. Ajouter les méthodes GET et POST nécessaires dans un fichier principal server.js (toujours dans le dossier carrelage). <br />
+
+                    6. Utiliser la méthode sendFile() par la méthode GET afin d’envoyer en réponse au client la page calculCarrelage.html dans la route ‘’/’’ (home). <br />
+
+                    7. Dans le fichier server.js , effectuez le calcul adéquat en prenant compte de l’info écrite en rouge en haut. <br />
+
+                    8. Écrivez le bon code afin de renvoyer au client une phrase de ce genre : "Il vous faudra xcarreaux pour une surface de y m2 ! " . <br />
+
+                    x représente le nombre de carreaux calculés grâce à l’info en rouge. <br />
+
+                    y représente la surface que le client rentre dans l’input du formulaire.</p> <br />
 
 
 
