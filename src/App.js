@@ -5,6 +5,7 @@ import NodeCours from './pages/NodeCours';
 import ReactCours from './pages/ReactCours';
 import './App.css'
 import SqlCours from './pages/SqlCours';
+import ExercicesNode from './pages/ExercicesNode';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path='/NodeCours' exact element={<NodeCours />} />
           <Route path='/ReactCours' exact element={<ReactCours />} />
           <Route path='/SqlCours' exact element={<SqlCours />} />
+          <Route path='/ExercicesNode' exact element={<ExercicesNode />} />
         </Routes>
       </BrowserRouter>
     </>
