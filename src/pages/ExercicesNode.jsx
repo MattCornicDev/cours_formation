@@ -10,6 +10,7 @@ const ExercicesNode = () => {
 
                 <a href="#exercice1">Exercice 1 carrelage</a>
                 <a href="#correction1">Correction Exercice 1</a>
+                <a href="#exercice2">Exercice 2 API</a>
 
 
 
@@ -109,6 +110,27 @@ const ExercicesNode = () => {
                     </code>
                 </pre>
             </ol>
+
+            <h2>Exercice 2 API</h2>
+
+            <ol>
+                <li>Créer un repertoire Sotherby-API</li>
+                <li>Initialiser les packets NPM suivants : body-parser, express, mongoose, ejs</li>
+                <li>Créer un fichier serveur.js</li>
+                <li>Ajoutez les ligne nécessaires au bon fonctionnement de la page server.js</li>
+                <li>Initialiser la connexion avec la base de données MongoDB :</li>
+                <ul>
+                    <li>Le nom de la base de données sera sotherbyDB</li>
+                    <li>Le nom de la collection sera paintingSold</li>
+                    <li>Cette Collection contiendra 3 champs :</li>
+                    <ol>
+                        <li>le nom de la peinture vendue sous le nom name</li>
+                        <li>le nom du peintre de cette peinture sous le nom author</li>
+                        <li>le prix de vente de la peinture sous le nom price</li>
+                    </ol>
+                </ul>
+            </ol>
+
             <Footer />
         </>
     )
