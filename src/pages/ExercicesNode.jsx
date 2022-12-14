@@ -47,6 +47,68 @@ const ExercicesNode = () => {
             </p>
 
             <h2 id="correction1">Correction Exercice 1</h2>
+
+            <ol>
+                <li>creer un dossier nommée carrelage</li>
+                <li>touch caclculCarrelage.html</li>
+                <li>touch server.js</li>
+                <li>Ajouter le doctype</li>
+                <li>Ajouter un formulaire</li>
+                <pre>
+                    <code>
+                        form action="/" method="post" <br />
+                        input type="text" name="surface" placeholder="rentrer votre surface" <br />
+                        button type="submit" Renvoyer le nombre de carreaux nécessaire button <br />
+                    </code>
+                </pre>
+                <li>Server JS. Faire un npm init et installer nos dependences: <br />
+                    express body-parser </li>
+                <pre>
+                    <code>
+                        const express = require("express") <br />
+                        const bodyParser = require("body-parser") <br /> <br />
+                        cons app = express() <br /><br />
+
+                        app.use(bodyParser.urlencoded({'{'}extended:false{'}'}));<br /><br />
+
+                        app.get("/",(req,res) {'=> {'} <br />
+                        res.sendFile(__dirname + "/calculCarrelage.html") <br />
+                        {'}'}) <br />
+                        <br />
+                        app.listen(3005,() {'{'} <br />
+                        console.log("J'écoute bien sur le port 3005") <br />
+                        {'}'})
+                    </code>
+                </pre>
+                <p>Une fois notre get fait on va recuperer notre input. Pour notre calcul on va recuperer la surface de notre client et on le multiplie par 45</p>
+                <li>Ajouter une methode post</li>
+
+                <pre>
+                    <code>
+                        const express = require("express") <br />
+                        const bodyParser = require("body-parser") <br /> <br />
+                        cons app = express() <br /><br />
+
+                        app.use(bodyParser.urlencoded({'{'}extended:false{'}'}));<br /><br />
+
+                        app.get("/",(req,res) {'=> {'} <br />
+                        res.sendFile(__dirname + "/calculCarrelage.html") <br />
+                        {'}'}) <br />
+
+                        app.post("/",(req,res) {'=> {'} < br />
+                        const surface = Number(req.body.surface); <br />
+                        const nbr_carreaux = surface * 45 <br />
+                        res.send("Il vous faudra " + nbr_carreaux + "de carreaux pour une surface de " + surface + " m2");
+                        )
+
+                        <br />
+
+                        app.listen(3005,() {'{'} <br />
+                        console.log("J'écoute bien sur le port 3005") <br />
+                        {'}'})
+                    </code>
+                </pre>
+            </ol>
             <Footer />
         </>
     )
