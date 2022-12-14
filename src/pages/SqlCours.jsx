@@ -109,11 +109,11 @@ const Sql = () => {
                         ('playboi','carti'), <br />
                         ('jane','birkin') <br />
                     </code>
-                </p>
+                </p> <br />
 
                 <p><code>SELECT * FROM musiciens</code></p>
 
-                <p>Ajoutons des musiques</p>
+                <p>Ajoutons des musiques</p> <br />
                 <code>INSERT INTO musique(titre,annee_de_sortie,avis) VALUES <br />
                     ('hier encore',1964,'super') <br />
                     ('against all odds',1981,'du lourd') <br />
@@ -128,22 +128,22 @@ const Sql = () => {
                     ('je taime moi non plus', 1969,'classique') <br />
                 </code>
 
-                <code>SELECT titre FROM musique; </code>
-                <code>SELECT annee_de_sortie FROM musique;</code>
-                <code>SELECT titre, annee_de_sortie FROM musique;</code>
-                <code>SELECT * FROM musique WHERE titre LIKE 's%';</code>
-                <code>SELECT * FROM musique WHERE titre NOT LIKE 's%';</code>
-                <code>SELECT * FROM musique WHERE titre LIKE 'location';</code>
-                <code>SELECT * FROM musique WHERE titre LIKE 's%' OR annee_de_sortie = 1982;</code>
-                <code>SELECT * FROM musique WHERE titre LIKE 'location' OR annee_de_sortie {'<'} 2015;</code>
-                <code>SELECT * FROM musique WHERE titre LIKE 'location' AND annee_de_sortie {'<'} 2015;</code>
+                <code>SELECT titre FROM musique; </code> <br />
+                <code>SELECT annee_de_sortie FROM musique;</code> <br />
+                <code>SELECT titre, annee_de_sortie FROM musique;</code> <br />
+                <code>SELECT * FROM musique WHERE titre LIKE 's%';</code> <br />
+                <code>SELECT * FROM musique WHERE titre NOT LIKE 's%';</code> <br />
+                <code>SELECT * FROM musique WHERE titre LIKE 'location';</code> <br />
+                <code>SELECT * FROM musique WHERE titre LIKE 's%' OR annee_de_sortie = 1982;</code> <br />
+                <code>SELECT * FROM musique WHERE titre LIKE 'location' OR annee_de_sortie {'<'} 2015;</code> <br />
+                <code>SELECT * FROM musique WHERE titre LIKE 'location' AND annee_de_sortie {'<'} 2015;</code> <br />
                 <code>SELECT titre, annee_de_sortie FROM musique WHERE annee_de_sortie BETWEEN 1981 AND 2013;</code>
                 <br />
-                <code>SELECT titre, annee_de_sortie FROM musique WHERE annee_de_sortie IN (1982,2013,2015)</code>
-                <code>SELECT titre, annee_de_sortie FROM musique WHERE annee_de_sortie NOT IN (1982,2013,2015)</code>
+                <code>SELECT titre, annee_de_sortie FROM musique WHERE annee_de_sortie IN (1982,2013,2015)</code> <br />
+                <code>SELECT titre, annee_de_sortie FROM musique WHERE annee_de_sortie NOT IN (1982,2013,2015)</code> <br />
                 <code>SELECT titre, annee_de_sortie FROM musique WHERE annee_de_sortie {'<>'} 2015</code>
                 <br />
-                <code>SELECT * FROM musique WHERE titre IN ('location','je taime moi non plus')</code>
+                <code>SELECT * FROM musique WHERE titre IN ('location','je taime moi non plus')</code> <br /><br />
 
                 <h2 id='concat_substring'>CONCAT & SUBSTRING</h2>
                 <p><code>SELECT CONCAT(prenom,',',nom) FROM musiciens;</code> </p>
@@ -156,7 +156,7 @@ const Sql = () => {
                 <br />
 
 
-                <h2 id='exercice1'>EXERCICE 1</h2>
+                <h2 id='exercice1'>EXERCICE 1</h2> <br />
 
                 <p>
                     CREER UNE TABLE table1 AVEC id ,prenom,   nom, month1,month2,month3,month4,month5 COMME COLONNES; <br />
