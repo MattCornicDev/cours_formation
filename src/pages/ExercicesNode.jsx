@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Navbar from '../components/navigation/Navbar'
 import Footer from '../components/footer/Footer'
 
@@ -11,6 +12,7 @@ const ExercicesNode = () => {
                 <a href="#exercice1">Exercice 1 carrelage</a>
                 <a href="#correction1">Correction Exercice 1</a>
                 <a href="#exercice2">Exercice 2 API</a>
+                <a href="#correction2">Correction exercice 2 API</a>
 
 
 
@@ -131,7 +133,7 @@ const ExercicesNode = () => {
                 </ul>
             </ol>
 
-            <h2>Correction Exercice 2 API</h2>
+            <h2 id='correction_exercice2'>Correction Exercice 2 API</h2>
 
             <pre>
                 <code>
@@ -176,6 +178,8 @@ const ExercicesNode = () => {
                 </code>
             </pre>
             <p>Creer un dossier "views"</p>
+
+            <Link to='../ApiRestFull'>La suite ici</Link>
             <Footer />
         </>
     )

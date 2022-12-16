@@ -6,6 +6,7 @@ import ReactCours from './pages/ReactCours';
 import './App.css'
 import SqlCours from './pages/SqlCours';
 import ExercicesNode from './pages/ExercicesNode';
+import ApiRestFull from './pages/ApiRestFull';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path='/ReactCours' exact element={<ReactCours />} />
           <Route path='/SqlCours' exact element={<SqlCours />} />
           <Route path='/ExercicesNode' exact element={<ExercicesNode />} />
+          <Route path='/ApiRestFull' exact element={<ApiRestFull />} />
         </Routes>
       </BrowserRouter>
     </>
