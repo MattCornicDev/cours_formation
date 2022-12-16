@@ -131,6 +131,51 @@ const ExercicesNode = () => {
                 </ul>
             </ol>
 
+            <h2>Correction Exercice 2 API</h2>
+
+            <pre>
+                <code>
+                    mkdir Sotheby-API <br />
+                    cd Sotheby-API <br />
+                    touch server.js <br />
+                    npm init -y <br />
+                    yarn add express ejs body-parser mongoose <br />
+                    code . <br />
+                </code>
+            </pre>
+            <p>Creons notre serveur</p>
+            <pre>
+                <code>
+                    const express = require("express") <br />
+                    const bodyParser = require("body-parser") <br />
+                    const ejs = require('ejs') <br />
+                    const mongoose = require('mongoose') <br /><br />
+
+                    const app = express() <br /><br />
+
+                    app.set('view engine', 'ejs')
+
+                    app.use(bodyParser.urlencoded({'{extended:false}'})) <br /><br />
+
+                    // connexion à la bdd
+                    mongoose.set('userUnifiedTopology', true) <br />
+                    mongoose.connect("mongodb://localhost/sotherbyDB",{'{useNewUrlParser: true}'}) <br /><br />
+
+                    //creer notre premier schema
+                    const paintingSchema = new mongoose.Schema({'{'} <br />
+                    name: String, <br />
+                    author: String, <br />
+                    price: Number <br />
+                    {'}'}) <br />
+                    const Painting = mongoose.model("paintingSold", paintingSchema)
+
+                    app.listen(3000, (req,res) {'=> {'} <br />
+                    console.log("Serveur lancée sur le port 3000")
+                    {'}'})
+
+                </code>
+            </pre>
+            <p>Creer un dossier "views"</p>
             <Footer />
         </>
     )
