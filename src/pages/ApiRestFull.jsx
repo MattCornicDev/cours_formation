@@ -6,7 +6,23 @@ function ApiRestFull() {
     return (
         <>
             <Navbar />
-            <h1>API RestFull</h1>
+            <nav className='nav flex-column navbar-expand-md' >
+
+                <a href="#api">API RestFull</a>
+                <a href="#creation_nouvelle_peinture">Creation d'une nouvelle peinture</a>
+                <a href="#supprimer_tout">Supprimer toutes les peintures</a>
+                <a href="#modifier">Modifier des données</a>
+
+
+
+                <div className='d-inline'>
+                    <img className='logo_donneur_ordre' src={process.env.PUBLIC_URL + "/Logo-GRETA-Grand-Hainaut-500.jpg"} alt="logo du greta" width="150px" /></div>
+                <div className='d-inline'>
+                    <img className='logo_partenaires' src={process.env.PUBLIC_URL + "/logo_partenaires.png"} alt="logo des partenaires financiers" width="150px" />
+                </div>
+            </nav >
+            <h1 id="api">API RestFull</h1>
+
 
             <p>Creons de nouvelles peintures au lieu de faire save pour les inserer avec InsertMany(). Ajoutons une route method get() recherchons nos elements avec la methode find(), avec à l'interieur des accolades vides parce nous voulons renvoyer tout l'objet</p>
             <pre>
@@ -80,7 +96,7 @@ function ApiRestFull() {
             </pre>
             <p>Une fois <code>nodemon server</code> on verfie si dans la bdd sotheby est bien enregistrer. <code>mongosh</code> puis <code>show dbs</code> puis <code>use sotheby</code> puis <code>show collections</code> puis <code>db.paintingsolds.find()</code></p>
 
-            <h2>Creation d'une nouvelle peinture</h2>
+            <h2 id='creation_nouvelle_peinture'>Creation d'une nouvelle peinture</h2>
 
             <p>Ajoutons pour cela une methode post, plutot que d'utiliser un formulaire on va utiliser Postman.</p>
             <pre>
@@ -142,7 +158,7 @@ function ApiRestFull() {
                 <p>On a bien enregisté notre nouvelle objet. Pour verifier dans mongodb tapons <code>db.paintingsolds.find()</code> et nous avons bien notre tableau "Cene" enregistré</p>
             </p>
 
-            <h2>Supprimer toute les peinturees</h2>
+            <h2 id='supprimer_tout'>Supprimer toute les peinturees</h2>
 
             <p>Pour supprimer nos peintures nous allons utiliser la methode delete</p>
             <pre>
@@ -207,7 +223,7 @@ function ApiRestFull() {
             <p>notre base de donnée est vide decommenter l'insertion pour remettre ce que nous avons effacer. <br />
                 ensuite dans l'url entrer cett adresse http://localhost:3000/painting/La%20Jonconde le %20 est le code ASCII pour espace La Jonconde est le name</p>
 
-            <h2>Modifier des données</h2>
+            <h2 id='modifier'>Modifier des données</h2>
 
             <p>Le PUT et le PATCH font quasiement la même chose. Le PUT remplace un document alors que le PATCH remplace uniquement le champ</p>
 
