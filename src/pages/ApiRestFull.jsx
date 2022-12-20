@@ -132,14 +132,14 @@ function ApiRestFull() {
                     {'}'}) <br />
                 </code>
             </pre>
-            <p>La consoloe nous renvoie bien penture vendu
+            <p>La console nous renvoie bien penture vendu
                 <pre>
                     <code>
                         Serveur lancée sur le port 3000 <br />
                         peinture vendu <br />
                     </code>
                 </pre>
-                <p>On a bien enregister notre nouvelle objet. Pour verifier dans mongodb tapons <code>db.paintingsolds.find()</code> et nous avons bien notre tableau "Cene" enregistré</p>
+                <p>On a bien enregisté notre nouvelle objet. Pour verifier dans mongodb tapons <code>db.paintingsolds.find()</code> et nous avons bien notre tableau "Cene" enregistré</p>
             </p>
 
             <h2>Supprimer toute les peinturees</h2>
@@ -158,7 +158,7 @@ function ApiRestFull() {
                     {'}'}) <br />
                 </code>
             </pre>
-            <p>Je met en methode delete sur postman et je clique sur "Send" si je verifie ma console elle m'indique bien "Peinture supprimé"</p>
+            <p>En methode delete sur postman et je clique sur "Send" si je verifie ma console elle m'indique bien "Peinture supprimé"</p>
 
             <pre>
                 <code>
