@@ -13,8 +13,6 @@ function ApiRestFull() {
                 <a href="#supprimer_tout">Supprimer toutes les peintures</a>
                 <a href="#modifier">Modifier des données</a>
 
-
-
                 <div className='d-inline'>
                     <img className='logo_donneur_ordre' src={process.env.PUBLIC_URL + "/Logo-GRETA-Grand-Hainaut-500.jpg"} alt="logo du greta" width="150px" /></div>
                 <div className='d-inline'>
@@ -24,7 +22,8 @@ function ApiRestFull() {
             <h1 id="api">API RestFull</h1>
 
 
-            <p>Creons de nouvelles peintures au lieu de faire save pour les inserer avec InsertMany(). Ajoutons une route method get() recherchons nos elements avec la methode find(), avec à l'interieur des accolades vides parce nous voulons renvoyer tout l'objet</p>
+            <p>Créons de nouvelles peintures au lieu de faire save pour les insérer avec InsertMany(). Ajoutons une route methode get() recherchons nos élements avec la méthode find(), avec à l'intérieur des accolades vides parce nous voulons renvoyer tout l'objet</p>
+
             <pre>
                 <code>
                     const express = require("express") <br />
@@ -41,7 +40,7 @@ function ApiRestFull() {
                     // connexion à la bdd <br />
                     mongoose.connect("mongodb://localhost/sotherbyDB",{'{useNewUrlParser: true}'}) <br /><br />
 
-                    //creer notre premier schema <br />
+                    //créer notre premier schema <br />
                     const paintingSchema = new mongoose.Schema({'{'} <br />
                     name: String, <br />
                     author: String, <br />
@@ -94,20 +93,22 @@ function ApiRestFull() {
 
                 </code>
             </pre>
-            <p>Une fois <code>nodemon server</code> on verfie si dans la bdd sotheby est bien enregistrer. <code>mongosh</code> puis <code>show dbs</code> puis <code>use sotheby</code> puis <code>show collections</code> puis <code>db.paintingsolds.find()</code></p>
 
-            <h2 id='creation_nouvelle_peinture'>Creation d'une nouvelle peinture</h2>
+            <p>Une fois <code>nodemon server</code> on vérifie si dans la bdd sotheby est bien enregistré. <code>mongosh</code> puis <code>show dbs</code> puis <code>use sotheby</code> puis <code>show collections</code> puis <code>db.paintingsolds.find()</code></p>
 
-            <p>Ajoutons pour cela une methode post, plutot que d'utiliser un formulaire on va utiliser Postman.</p>
+            <h2 id='creation_nouvelle_peinture'>Création d'une nouvelle peinture</h2>
+
+            <p>Ajoutons pour cela une méthode post, plutôt que d'utiliser un formulaire on va utiliser Postman. <br />
+                Postman est une plate-forme API pour la création et l'utilisation d'API. Il simplifie chaque étape du cycle de vie des API et rationalise la collaboration afin que vous puissiez créer de meilleures API plus rapidement.</p>
             <pre>
                 <code>
                     app.post('/painting',(req, res) {'=> {'} <br />
-
-
                     {'}'})
                 </code>
             </pre>
-            <p>Plutôt que de créer un formulaire et recuperer le input avec req.body.name nous allons utiliser postman. Dans postman entrer l'url "http://localhost:3000/painting" et dans l'onglet body cocher form-urlencoder. Au lieu de creer un input postman nous permet d'ecrire des cles et des valeures </p>
+
+            <p>Plutôt que de créer un formulaire et récupérer le "input" avec "req.body.name" nous allons utiliser Postman. Dans postman entrer l'url "http://localhost:3000/painting" et dans l'onglet body cocher form-urlencoder. Au lieu de créer un input postman nous permet d'écrire des clés et des valeures </p>
+
             <img src={process.env.PUBLIC_URL + '/media/postman.png'} alt="postman" width="800px" />
 
             <pre>
@@ -119,7 +120,8 @@ function ApiRestFull() {
                     {'}'}) <br />
                 </code>
             </pre>
-            <p>En methode_POST appuyer sur "Send" la console doit vous renvoyer
+
+            <p>En méthode_POST appuyer sur "Send" la console doit vous renvoyer
                 <pre>
                     <code>
                         Serveur lancée sur le port 3000 <br />
@@ -129,6 +131,7 @@ function ApiRestFull() {
                     </code>
                 </pre>
             </p>
+
             <p>Effacons nos console log, En restFull post c'est pour creer un nouvel objet.</p>
             <pre>
                 <code>
@@ -148,6 +151,7 @@ function ApiRestFull() {
                     {'}'}) <br />
                 </code>
             </pre>
+
             <p>La console nous renvoie bien penture vendu
                 <pre>
                     <code>
@@ -184,9 +188,9 @@ function ApiRestFull() {
             </pre>
             <p>Allons sur mongosh et faisons un <code>show dbs</code> et <code>use SothebyDB</code> puis <code>show collections</code> puis <code>db.paintingsolds.find()</code> et on ne m'affiche rien tout à bien été supprimé</p>
 
-            <h2>Recuperer une peinture specifique</h2>
+            <h2>Récuperer une peinture spécifique</h2>
 
-            <p>On va utiliser une methode get mais dans la route on va specifier le nom de notre peinture</p>
+            <p>On va utiliser une méthode get mais dans la route on va specifier le nom de notre peinture</p>
 
             <pre>
                 <code>
@@ -204,7 +208,7 @@ function ApiRestFull() {
                 </code>
             </pre>
 
-            <p>Si on entre dans l'url "http://localhost:3000/painting/coucou" la console renverra coucou. Nous allons donc faire une requete dans notre base de donnée et nous ne voulons pas recuperer tout mais un seul element par consequent nous n'utiliserons pas find() mais findOne()</p>
+            <p>Si on entre dans l'url "http://localhost:3000/painting/coucou" la console renverra coucou. Nous allons donc faire une requête dans notre base de donnée et nous ne voulons pas recupérer tout mais un seul élément par conséquent nous n'utiliserons pas find() mais findOne()</p>
 
             <pre>
                 <code>
@@ -220,8 +224,8 @@ function ApiRestFull() {
                 </code>
             </pre>
 
-            <p>notre base de donnée est vide decommenter l'insertion pour remettre ce que nous avons effacer. <br />
-                ensuite dans l'url entrer cett adresse http://localhost:3000/painting/La%20Jonconde le %20 est le code ASCII pour espace La Jonconde est le name</p>
+            <p>notre base de donnée est vide décommenter l'insertion pour remettre ce que nous avons effacer. <br />
+                ensuite dans l'url entrer cette adresse http://localhost:3000/painting/La%20Jonconde le %20 est le code ASCII pour espace, La Jonconde est le name</p>
 
             <h2 id='modifier'>Modifier des données</h2>
 
@@ -244,13 +248,12 @@ function ApiRestFull() {
                     {'}'})
                 </code>
             </pre>
-            <p>Dans la methode update le deuxieme parametre sont les informations à update. Dans postman on entre l'url methode PUT http://localhost:3000/painting/Guernica et on modifie les parametres </p>
+
+            <p>Dans la méthode update le deuxieme paramètre sont les informations à update. Dans postman on entre l'url méthode PUT http://localhost:3000/painting/Guernica et on modifie les paramètres </p>
 
             <img src={process.env.PUBLIC_URL + "/media/postman_PUT.png"} alt="postman method put" width="800px" />
 
-            <p>Si on change l'url et qu'on ajoute http://localhost:3000/painting/le%20cri et décocher name si vous reactualiser dans la collection vous n'avez plus de name. Cela est dû à la methode PUT. Pour modifier uniquement les propositions nous utiliserons la methode PATCH</p>
-
-
+            <p>Si on change l'url et qu'on ajoute http://localhost:3000/painting/le%20cri et décocher name si vous réactualisez dans la collection vous n'avez plus de name. Cela est dû à la méthode PUT. Pour modifier uniquement les propositions nous utiliserons la methode PATCH</p>
 
             <Footer />
 
