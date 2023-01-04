@@ -11,8 +11,37 @@ export default function ReactCours() {
 
             <Container>
 
+                <nav className='nav flex-column navbar-expand-md' >
 
-                <h1>React JS</h1>
+                    <a href="#reactjs">React JS</a>
+                    <a href="#app&index">App.js et index.js</a>
+                    <a href="#types">Types</a>
+
+
+                    <div className='d-inline'>
+                        <img className='logo_donneur_ordre' src={process.env.PUBLIC_URL + "/Logo-GRETA-Grand-Hainaut-500.jpg"} alt="logo du greta" width="150px" /></div>
+                    <div className='d-inline'>
+                        <img className='logo_partenaires' src={process.env.PUBLIC_URL + "/logo_partenaires.png"} alt="logo des partenaires financiers" width="150px" />
+                    </div>
+                </nav >
+
+
+                <h1 id='#reactjs'>React JS</h1>
+
+                <p>Un site web standard suit un modèle <strong>Multi-Page Application</strong> Lorsque l'on demande une page on fait une requête HTTP au serveur, le serveur renvoie alors page demandé. Le serveur renvoie une reponse pour chaque requête faite <br />
+                    <strong>Single Page Application</strong> SPA. Dans une app SPA il y a une  diminution des charges soumises au serveur, l'utilisateur ne charge la page qu'une seule fois. Une fois la page chargé il n'y a pas de rechargement chaque fois que vous sollicité une page, elles sont mises en cache sur le navigateur et ne nécessitent plus d’interaction avec le serveur pour charger le contenu statique. Séparation des interfaces, L’interface client en étant une application à part entière, permet de découpler le code « front » du code « back » permettant une meilleur lisibilité du code ainsi qu'une meilleur répartition des rôles.
+                </p>
+
+                <p>Néanmoins comme tout langage, tout framework, toute librairie, il existe quelque defaut à React. La lenteur du chargement intitial de la page, Un référencement ralentit. Le rendu étant JavaScript les robots de google detectent une page vide lors de leur premier passage sur la page</p>
+
+                <p>Server Side Rendering est une méthode servant à générer un server node coté server en utilisant React, Le module va en effet permettre de coupler les avantages des MPA et des SPA.  Le contenu de la première page va alors être joué côté serveur, permettant d’obtenir le contenu statique de la page dès la récupération du document HTML. Ensuite, une fois le Javascript chargé, react reprend son fonctionnement initial qui est la génération des pages côté client appelé « Client Side Rendering ».
+                </p>
+
+                <p>
+                    React Server Components, React vient d’introduire une nouvelle technologie, les « React Server Component ». Contrairement au SSR qui va simplement générer le HTML de chaque composant de la page à leur état initial, les RSC vont directement exécuter l’intégralité du code d’un composant React côté serveur, sans passer par le client avant de lui transmettre le résultat sous la forme d’un pseudo JSON.
+                </p>
+
+                <p>L’avantage initial des « React Server Components » est la diminution des packets Javascript, envoyés au client. Les composants côtés serveur ainsi que leur dépendance, n’étant pas transmises.</p>
 
                 <p>Créer un projet <code>yarn create react-app my-app</code></p>
                 <p>Le dossier src</p>
@@ -30,7 +59,7 @@ export default function ReactCours() {
 
 
 
-                <h3>App.js et index.js</h3>
+                <h3 id='#app&index'>App.js et index.js</h3>
 
                 <p>Dans le fichier src créer le fichier App.js</p>
 
@@ -135,10 +164,11 @@ export default function ReactCours() {
 
                 <h3>34'26</h3>
 
-
                 <Footer />
 
             </Container>
+
+
 
         </>
 

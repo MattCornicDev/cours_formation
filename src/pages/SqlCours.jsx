@@ -32,7 +32,8 @@ const Sql = () => {
 
             <div className="container">
                 <h2 id='Installer_Sql'>Installation de mySql</h2>
-                <p>Installer mySql via le site web et lancer <code>mysql: mysql -u root -p</code> dans le terminal. Pour voir les bases de données <code>SHOW DATABASES</code> Pour utiliser une base de donnée "USE (et le nom de la base de donnée) ici <code>USE testt</code> pour aller dans la bdd testt. Creer une table: <code>CREATE TABLE commandes</code>  taper "Entrer" pour entrer les champs</p>
+                <p>Installer mySql via le site web et lancer <code> mysql -u root -p</code> apres avoir fait <code>mysql.server start</code> ou <code>brew services start mysql</code> dans le terminal. Pour voir les bases de données <code>SHOW DATABASES</code> <br />
+                    pour installer une base de donnée téléchargé <code>SOURCE /Users/mattcornic/Downloads/sakila-db/sakila-schema.sql;</code> pour l'exemple de la bdd sakila et <code>SOURCE /Users/mattcornic/Downloads/sakila-db/sakila-data.sql;</code> Pour utiliser une base de donnée "USE (et le nom de la base de donnée) ici <code>USE testt</code> pour aller dans la bdd testt. Creer une table: <code>CREATE TABLE commandes</code>  taper "Entrer" pour entrer les champs</p>
 
                 <img src={process.env.PUBLIC_URL + "/media/creation_table_sql.png"} alt="ecran du terminal" width="800px" />
 
