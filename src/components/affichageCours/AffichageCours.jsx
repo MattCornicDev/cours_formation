@@ -3,27 +3,57 @@ import { Link } from 'react-router-dom';
 import './affichageCours.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-
-
-
-
-
 export default class AffichageCours extends Component {
     render() {
         return (
 
             <div>
                 <Link to="/gitCours">
-                    <h3 className="badge bg-warning">
+                    <h3 className="badge bg-warning m-1">
                         Cours Git</h3>
                 </Link>
                 <Link to="/nodeCours">
-                    <h3 className="badge bg-warning">
+                    <h3 className="badge bg-warning m-1">
                         Cours node JS</h3>
                 </Link>
-                <Link to="/react_cours">
-                    <h3 className="badge bg-warning">
+                <Link to="/ReactCours">
+                    <h3 className="badge bg-warning m-1">
                         Cours React JS</h3>
+                </Link>
+                <Link to="/SqlCours">
+                    <h3 className='badge bg-warning m-1'>
+                        Cours SQL
+                    </h3>
+                </Link>
+                <Link to="/ExercicesNode">
+                    <h3 className='badge bg-warning m-1'>
+                        Exercices NodeJS
+                    </h3>
+                </Link>
+                <Link to="/ApiRestFull">
+                    <h3 className='badge bg-warning m-1'>
+                        Api RestFull
+                    </h3>
+                </Link>
+                <Link to="/ProgrammationCours">
+                    <h3 className='badge bg-warning m-1'>
+                        Programmation
+                    </h3>
+                </Link>
+                <Link to="/jsCours">
+                    <h3 className='badge bg-warning m-1'>
+                        JavaScript Cours
+                    </h3>
+                </Link>
+                <Link to="/HtmlCours">
+                    <h3 className='badge bg-warning m-1'>
+                        Html Cours
+                    </h3>
+                </Link>
+                <Link to="/ReactCoursTheorique">
+                    <h3 className="badge bg-warning m-1">
+                        React Cours theorique
+                    </h3>
                 </Link>
             </div>
 

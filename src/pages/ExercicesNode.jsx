@@ -18,6 +18,8 @@ const ExercicesNode = () => {
                     <a href="#correction2">Correction exercice 2 API</a>
                     <a href="#exercice-nodejs">exerice nodeJS</a>
                     <a href="#qcm-js">QCM JavaScript</a>
+                    <a href="#algoritme">Algorithme</a>
+                    <a href="#exercice-sql">Exercice SQL</a>
 
 
 
@@ -165,6 +167,7 @@ const ExercicesNode = () => {
                         app.use(bodyParser.urlencoded({'{extended:false}'})) <br /><br />
                         {/*  // connexion à la bdd */}
 
+
                         mongoose.set('userUnifiedTopology', true) <br />
                         mongoose.connect("mongodb://localhost/sotherbyDB",{'{useNewUrlParser: true}'}) <br /><br />
 
@@ -282,10 +285,51 @@ const ExercicesNode = () => {
                     <li>Comment utiliser la méthode filter pour filtrer les éléments d'un tableau en JavaScript?</li>
                     <li>Comment utiliser la méthode reduce pour réduire un tableau en une valeur unique en JavaScript ?</li>
                     <li>Comment créer un objet en JavaScript ?</li>
-                    <li>Comment accéder à une propriété d'un objet en JavaScript?</li>
-                    <li>Comment définir une propriété d'un objet en JavaScript?</li>
-                    <li>Comment supprimer une propriété d'un objet en JavaScript?</li>
+                    <li>Comment accéder à une propriété d'un objet en JavaScript ?</li>
+                    <li>Comment définir une propriété d'un objet en JavaScript ?</li>
+                    <li>Comment supprimer une propriété d'un objet en JavaScript ?</li>
+                    <li>quelle différence entre java et javascript ?</li>
                 </ol >
+
+
+
+                <h2 id='algoritme'>Algoritme</h2>
+
+                <p>Écrivez une fonction qui prend en entrée un entier n et renvoie la somme des nombres entiers pairs compris entre 0 et n, inclus.</p>
+
+                <p>réponse</p>
+
+                <pre>
+                    <code>
+                        function sumNumbers(n) {'{'} <br />
+                        let sum = 0; <br />
+                        for (let i = 0; i {'<='} n; i += 2) {'{'} <br />
+                        sum += i; <br />
+                        {'}'} <br />
+                        return sum; <br />
+                        {'}'} <br /> <br />
+
+                        console.log(sumNumbers(4)); // affiche 6 (2 + 4) <br />
+                        console.log(sumNumbers(6)); // affiche 12 (2 + 4 + 6) <br />
+                        console.log(sumNumbers(10)); // affiche 30 (2 + 4 + 6 + 8 + 10) <br />
+
+                    </code>
+                </pre>
+
+                <h2 id='exercice-sql'>Exercice SQL</h2>
+
+                <p>Écrivez une requête SQL qui sélectionne tous les enregistrements de la table "customers" où le champ "country" vaut "France" et trie les résultats par ordre croissant de "last_name".</p>
+
+                <p>réponse</p>
+
+                <pre>
+                    <code>
+                        SELECT * FROM customers
+                        WHERE country = 'France'
+                        ORDER BY last_name ASC;
+
+                    </code>
+                </pre>
 
                 <Footer />
             </Container>

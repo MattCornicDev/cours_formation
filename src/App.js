@@ -28,7 +28,7 @@ function App() {
           <Route path='/ProgrammationCours' exact element={<ProgrammationCours />} />
           <Route path='/jsCours' exact element={<JsCours />} />
           <Route path='/HtmlCours' exact element={<HtmlCours />} />
-          <Route path='ReactCours2' exact element={<ReactCours2 />} />
+          <Route path='ReactCoursTheorique' exact element={<ReactCours2 />} />
         </Routes>
       </BrowserRouter>
     </>
