@@ -5,10 +5,12 @@ import './footer.css'
 export default class Footer extends Component {
   render() {
 
+    const anneeCourrante = new Date().getFullYear();
+
     return (
       <footer>
         <div>
-          <p className='footer'> © 2020 Copyright | Matt Cornic Dev</p>
+          <p className='footer'>© {anneeCourrante} Copyright | Matt Cornic Dev</p>
         </div>
       </footer>
     );

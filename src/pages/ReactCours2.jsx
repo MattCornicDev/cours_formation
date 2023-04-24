@@ -177,9 +177,6 @@ const ReactCours2 = () => {
                         <li>Création d'une application de commerce électronique avec React.js et Stripe</li>
                     </ul>
 
-
-
-
                 </div>
 
                 <Footer />

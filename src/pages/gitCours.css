@@ -1,0 +1,36 @@
+.container-cours {
+    width: 80%;
+    float: left;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: 2rem;
+}
+
+.table-des-matieres {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    width: auto;
+    right: 0;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: -3rem;
+    border-left: solid 1px;
+}
+.table-des-matieres {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
+  .table-des-matieres a {
+    margin-bottom: 10px;
+  }
+  
+  .logo_donneur_ordre {
+    margin-right: 10px;
+  }
+  
+  .logo_partenaires {
+    margin-right: 10px;
+  }

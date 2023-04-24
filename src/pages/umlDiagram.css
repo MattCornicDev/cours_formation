@@ -1,0 +1,43 @@
+.umldiagram-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .umldiagram-paper {
+    width: 600px;
+    height: 400px;
+    background-color: #f9f9f9;
+    border: 1px solid #000;
+  }
+  
+  .umldiagram-paper svg {
+    overflow: visible !important;
+  }
+  
+  .umldiagram-paper rect,
+  .umldiagram-paper circle {
+    cursor: pointer;
+  }
+  
+  .umldiagram-paper .element-name {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    margin: 5px 0;
+  }
+  
+  .umldiagram-paper .element-attributes,
+  .umldiagram-paper .element-methods {
+    font-size: 12px;
+    margin-left: 10px;
+  }
+  
+  .umldiagram-paper .element-attributes li,
+  .umldiagram-paper .element-methods li {
+    list-style: none;
+    margin: 3px 0;
+  }
+  

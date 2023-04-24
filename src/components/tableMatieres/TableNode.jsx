@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './tableNode.css'
-import 'bootstrap/dist/css/bootstrap.css';
+
 
 export default class TableNode extends Component {
     render() {
@@ -19,10 +19,9 @@ export default class TableNode extends Component {
                     <li class="list-group-item">Socket.io</li>
                     <li class="list-group-item"></li>
                     <li class="list-group-item"></li>
-                   
                 </ul>
 
-                
+
             </>
         )
     }

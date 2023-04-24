@@ -1,7 +1,23 @@
 html {
     scroll-behavior: smooth;
 }
-.nav {
+
+.container-cours {
+    width: 80%;
+    float: left;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: 2rem;
+}
+
+/*
+.container-table {
+    width: 30%;
+    float: right;
+}
+*/
+
+.table-des-matiere {
     display: flex;
     justify-content: center;
     position: fixed;
@@ -11,10 +27,8 @@ html {
     text-align: center;
     margin-bottom: -3rem;
     border-left: solid 1px;
-    
-    
 }
-nav a {
+.table-des-matiere a {
     text-decoration: none;
     font-size: 10px;
     transition: .5s;
@@ -22,7 +36,7 @@ nav a {
     float: left;
     padding: 0 20px; 
 }
-nav a:hover {
+.table-des-matiere a:hover {
     background: #3cf4cc;
     color: aliceblue;
     font-size:13px;
@@ -35,12 +49,31 @@ nav a:hover {
     
 }
 
+.table-des-matiere {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
+  .table-des-matiere a {
+    margin-bottom: 10px;
+  }
+  
+  .logo_donneur_ordre {
+    margin-right: 10px;
+  }
+  
+  .logo_partenaires {
+    margin-right: 10px;
+  }
+
+
 
 @media screen and (max-width: 920px) {
-    .nav {
+    .table-des-matiere {
         display: none;
     }
-    .navbar-brand {
+    .table-des-matiere {
         display: flex;
         justify-content: center;
         align-items: center;

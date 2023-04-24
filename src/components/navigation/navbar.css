@@ -1,39 +1,14 @@
-h1 { 
-    font-size:30px;
+.navBarContainer h1 { 
+    font-size: 4rem;
+    text-align: center;
+    margin : 40px;
 }
-.navbar-brand img {
-  border-radius: 100px;
-  background: rgb(248, 150, 2);
-}
-.card {
-  background: aliceblue;
-}
-
-.tilt {
-  transform-style: preserve-3d;
-  perspective: 1000px;
-}
-
-.card img {
-  width: 64px;
-  transform: translateZ(100px);
-  background: #fff;
-}
-
-.card-body {
+img {
   background-color: #fff;
 }
-
-.card-title {
-  transform: translateZ(100px);
-  background: #fff;
-  color: #212121;
-  
+.navBarContainer {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+  padding: 20px;
 }
-
-.card-text {
-  transform: translateZ(100px);
-  background: #fff;
-  color: #212121;
-}
-

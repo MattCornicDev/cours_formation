@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Navbar from '../components/navigation/Navbar'
 import Footer from '../components/footer/Footer';
+import './gitCours.css';
 
 
 export default class gitCours extends Component {
@@ -10,92 +11,53 @@ export default class gitCours extends Component {
                 <div>
                     <Navbar />
                 </div>
-                <div className='container'>
-
-                    <h1>GIT</h1>
-                    <div className='table-des-matieres'>
-                        <ul>
-                            <li><a href='#installation'>Installation</a></li>
-                            <li><a href='#commande_de_base'>Commande de base</a></li>
-                        </ul>
+                <div className="table-des-matieres">
+                    <div className='d-inline'>
+                        <img className='logo_donneur_ordre' src={process.env.PUBLIC_URL + "/Logo-GRETA-Grand-Hainaut-500.jpg"} alt="logo du greta" width="150px" /></div>
+                    <div className='d-inline'>
+                        <img className='logo_partenaires' src={process.env.PUBLIC_URL + "/logo_partenaires.png"} alt="logo des partenaires financiers" width="150px" />
                     </div>
-                    <h2>Introduction</h2>
-                    <p>git un outil de versionning. Désormais inutile de copier coller votre projet pour faire des modifications dans la crainte de saboter tout votre travail. Git permet d'ajouter, de modifier, d'effacer et surtout de revenir en arrière sans rien perdre de votre progression.</p>
+                </div>
 
-                    <h2 id='installation'>Installation</h2>
-                    <p>installer git via le site <a href='https://git-scm.com/'>officiel ici</a></p>
+                <div className='container-cours'>
+                    <h2>Commandes Git de base :</h2>
+                    <ul>
+                        <li><code>git init</code> - initialise un dépôt Git dans un nouveau répertoire local</li>
+                        <li><code>git add &lt;fichier&gt;</code> - ajoute un fichier à la zone de staging</li>
+                        <p>Ajouter un "." pour signifier l'ensemble du fichier courant</p>
 
-                    <h2 id='commande_de_base'>Commande de base</h2>
-                    <p>Pour initialiser un projet</p>
-                    <pre className='code_entre'>
-                        <code>
-                            <kbd>git init</kbd>
-                        </code>
-                    </pre>
-                    <p>Pour configurer git</p>
-                    <pre>
-                        <code>
-                            <kbd>git config --global user.email "votreEmail@gmail.com</kbd><br />
-                            <kbd>git config --global user.name "votreNom"</kbd>
-                        </code>
-                    </pre>
+                        <li><code>git commit -m "Le message correspondant au commit"</code> - enregistre les modifications apportées au dépôt</li>
 
-                    <p>Pour connaitre l'état de votre configuration</p>
-                    <code><kbd>git config --global color.ui true</kbd></code>
-
-                    <p>Connaitre l'état de votre versionning</p>
-                    <pre><code><kbd>git status</kbd></code></pre>
-
-                    <p>Ajout des fichiers</p>
-                    <pre>
-                        <code><kbd>git add <code>&lt;fichier&gt; //ajoute le fichier</code></kbd></code><br />
-                        <code><kbd>git add <code>&lt;dossier&gt; //ajoute le dossier</code></kbd></code><br />
-                        <code><kbd>git *.html ; //ajoute le fichier</kbd></code><br />
-                        <code><kbd>git add --all ou . //ajoute le fichier</kbd></code><br />
-                    </pre>
-
-                    <p>commit</p>
-                    <pre>
-                        <code>
-                            <kbd>git commit -m "Message du commit"</kbd>
-                        </code>
-                    </pre>
-
-                    <p>log nous permet de retourner les informations sur les commits du projet</p>
-                    <pre>
-                        <code><kbd>git log //Récupère et affiche les derniers commit</kbd></code>
-                    </pre>
-
-                    <p>Options utiles</p>
-                    <code>--online</code>, affiche l'historique avec pour chaques commits une ligne<br />
-                    <code>-n &lt;nombre&gt;, affiche le nombre de commit que vous souhaitez</code><br />
-                    <code>-p &lt;fichier&gt;, permet de voir l'historique des commits concernant un fichier en particulier</code><br />
-                    <code>--author &lt;motif&gt;, historique en fonction du nom de l'auteur</code>
-
-                    <p>La commande diff</p>
-                    <code>
-                        <kbd>git diff</kbd><br />
-                        <kbd>git diff &lt;fichier&gt;</kbd>
-                    </code><br />
-
-                    <p>Comparer des commits ensemble</p>
-                    <code>
-                        <kbd>git diff &lt;commit&gt; // compare l'état actuel au commit &lt;commit&gt;</kbd><br />
-                        <kbd>git diff &lt;commit&gt;..&lt;commit&gt; // compare les fichiers entre deux commits</kbd>
-                    </code>
-                    <p>Annuler un merge</p>
-                    <code>
-                        <kbd>git reset</kbd>
-                    </code>
-
+                        <li><code>git status</code> - affiche l'état actuel de la branche</li>
+                        <li><code>git branch</code> - affiche toutes les branches locales</li>
+                        <li><code>git checkout &lt;nom-de-branche&gt;</code> - bascule sur la branche spécifiée</li>
+                        <li><code>git merge &lt;nom-de-branche&gt;</code> - fusionne une branche dans la branche actuelle</li>
+                        <li><code>git push</code> - pousse les modifications locales vers le dépôt distant</li>
+                        <li><code>git pull</code> - récupère les modifications du dépôt distant</li>
+                    </ul>
+                    <h2>Commandes GitHub de base :</h2>
+                    <ul>
+                        <li><code>git clone &lt;lien-du-dépôt&gt;</code> - clone un dépôt GitHub existant sur votre machine locale</li>
+                        <li><code>git remote add origin &lt;lien-du-dépôt&gt;</code> - ajoute un lien distant vers le dépôt GitHub</li>
+                        <li><code>git push -u origin &lt;nom-de-branche&gt;</code> - pousse une branche locale vers le dépôt distant</li>
+                        <li><code>git pull origin &lt;nom-de-branche&gt;</code> - récupère les modifications du dépôt distant pour une branche spécifique</li>
+                        <li><code>git branch -a</code> - affiche toutes les branches locales et distantes</li>
+                        <li><code>git merge origin/&lt;nom-de-branche&gt;</code> - fusionne une branche distante dans la branche locale actuelle</li>
+                        <li><code>git fetch</code> - récupère toutes les modifications du dépôt distant</li>
+                        <li><code>git tag &lt;nom-de-tag&gt;</code> - crée une étiquette pour une version spécifique</li>
+                        <li><code>git push --tags</code> - pousse les étiquettes vers le dépôt distant.</li>
+                    </ul>
 
                     <div>
                         <Footer />
                     </div>
+
                 </div>
 
 
             </>
+
+
 
 
         )

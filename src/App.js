@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import GitCours from './pages/GitCours';
 import NodeCours from './pages/NodeCours';
-import ReactCours from './pages/ReactCours';
+import ReactCours from './pages/react/ReactCours';
 import './App.css'
 import SqlCours from './pages/SqlCours';
 import ExercicesNode from './pages/ExercicesNode';
@@ -11,6 +11,9 @@ import ProgrammationCours from "./pages/ProgrammationCours";
 import JsCours from './pages/JsCours';
 import HtmlCours from './pages/HtmlCours';
 import ReactCours2 from './pages/ReactCours2';
+import UmlHistObj from './pages/Uml/UmlHistObj';
+import UmlDiagram from './pages/UmlDiagram';
+import CssCours from './pages/css/CssCours';
 
 
 function App() {
@@ -26,9 +29,12 @@ function App() {
           <Route path='/ExercicesNode' exact element={<ExercicesNode />} />
           <Route path='/ApiRestFull' exact element={<ApiRestFull />} />
           <Route path='/ProgrammationCours' exact element={<ProgrammationCours />} />
-          <Route path='/jsCours' exact element={<JsCours />} />
+          <Route path='/JsCours' exact element={<JsCours />} />
           <Route path='/HtmlCours' exact element={<HtmlCours />} />
-          <Route path='ReactCoursTheorique' exact element={<ReactCours2 />} />
+          <Route path='/ReactCours2' exact element={<ReactCours2 />} />
+          <Route path='/UmlHistObj' exact element={<UmlHistObj />} />
+          <Route path='/UmlDiagram' exact element={<UmlDiagram />} />
+          <Route path='/CssCours' exact element={<CssCours />} />
         </Routes>
       </BrowserRouter>
     </>

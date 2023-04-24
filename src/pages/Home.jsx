@@ -10,13 +10,11 @@ export default class Home extends Component {
             <>
                 <div>
                     <Navbar />
-                </div>
-                <div className="h-100 d-flex justify-content-evenly align-items-center">
+
                     <AffichageCours />
+
                 </div>
-                <div>
-                    <Footer />
-                </div>
+                <Footer />
             </>
         )
     }
